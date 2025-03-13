@@ -4,7 +4,6 @@
 + *.png
 + *.jpeg
 + *.jpg
-+ *_ejemplo.cs
 + *_ejemplo.zip
 + *_recurso.zip
 + *.svg
