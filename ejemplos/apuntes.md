@@ -212,10 +212,10 @@ Uso directo de HTML embebido con estilos definidos en el fichero importado justo
 Importar código **renderizado al vuelo** a gráfico vectorial.
 
 ```txt
-@import "assets/linux_kernel.dot" {align="center", style="zoom:0.4"}
+@import "assets//linux_kernel.dot" {align="center", style="zoom:0.4"}
 ```
 
-@import "assets/linux_kernel.dot" {align="center", style="zoom:0.4"}
+@import "assets//linux_kernel.dot" {align="center", style="zoom:0.4"}
 
 <div style="page-break-after:always;"></div>
 
@@ -341,8 +341,8 @@ Importar código **renderizado al vuelo** a gráfico vectorial.
     1. Ir a
 
 <div style="display: flex; justify-content: space-evenly; align-items: center; margin-top: 15px; margin-bottom: 15px">
-    <img height="200" src="assets/tabs_con_scroll.png">
-    <img height="200" src="assets/tabs_sin_scroll.png">
+    <img height="200" src="assets//tabs_con_scroll.png">
+    <img height="200" src="assets//tabs_sin_scroll.png">
 </div>
 
 
