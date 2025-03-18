@@ -28,7 +28,7 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           personal_token: ${{ secrets.DEPLOY_GH_KEY }}
-          external_repository: 2dawdwes/dwe_pages
+          external_repository: ORGANIZACION/REPOPUBLICO.github.io
           publish_branch: main
           publish_dir: ./www
           allow_empty_commit: true
