@@ -1,0 +1,14 @@
+Dado el pdf XXXXX. Genera un quiz de única opción válida que cumpla las características descritas en la siguiente lista numerada:
+
+1. Debe haber solo cuatro opciones de respuesta.
+2. Cada enunciado puede tener una opción correcta.
+3. La dificultad del test debe de ser media/alta.
+4. Genera mínimo 10 enunciados de pregunta.
+5. Evita opciones que engloben a otras o que sean ambiguas.
+6. Debes generar el Quiz en formato Aiken como el del siguiente ejemplo:
+    ¿Cuál es la respuesta correcta a esta pregunta?
+    A. ¿Es esta?
+    B. ¿Quizá esta?
+    C. ¿Tal vez esta otra?
+    D. ¡Debe ser esta!
+    ANSWER: D
