@@ -1,14 +1,63 @@
-Dado el pdf XXXXX. Genera un quiz de única opción válida que cumpla las características descritas en la siguiente lista numerada:
+Dado el pdf XXXXX. Genera un quiz de única opción válida para Moodle que cumpla las características descritas en la siguiente lista numerada:
 
 1. Debe haber solo cuatro opciones de respuesta.
-2. Cada enunciado puede tener una opción correcta.
+2. Cada enunciado puede tener solo una opción correcta.
 3. La dificultad del test debe de ser media/alta.
-4. Genera mínimo 10 enunciados de pregunta.
+4. Genera 10 preguntas.
 5. Evita opciones que engloben a otras o que sean ambiguas.
-6. Debes generar el Quiz en formato Aiken como el del siguiente ejemplo:
-    ¿Cuál es la respuesta correcta a esta pregunta?
-    A. ¿Es esta?
-    B. ¿Quizá esta?
-    C. ¿Tal vez esta otra?
-    D. ¡Debe ser esta!
-    ANSWER: D
+6. Resalta las palabras clave en negrita.
+7. Debes generar el Quiz en formato XML para Moodle siguiendo la estructura de ejemplo de la siguiente plantilla:
+
+    <quiz>
+    <question type="category">
+        <category>
+        <text>$course$/top/nombreficheropdf</text>
+        </category>
+    </question>
+    <question type="multichoice">
+        <name>
+        <text>Resumen enunciado de la pregunta 1</text>
+        </name>
+        <questiontext format="html">
+        <text><![CDATA[<p>Texto de la pregunta 1 poniendo en <b>negrita</b> las palabras clave</p>]]></text>
+        </questiontext>
+        <defaultgrade>1</defaultgrade>
+        <penalty>0.0000000</penalty>
+        <single>true</single>
+        <answer fraction="100.000" format="html">
+        <text><![CDATA[<p>Opción correcta para la pregunta 1</p>]]></text>
+        </answer>
+        <answer fraction="-33.333" format="html">
+        <text><![CDATA[<p>Opción incorrecta para la pregunta 1</p>]]></text>
+        </answer>
+        <answer fraction="-33.333" format="html">
+        <text><![CDATA[<p>Opción incorrecta para la pregunta 1</p>]]></text>
+        </answer>
+        <answer fraction="-33.333" format="html">
+        <text><![CDATA[<p>Opción incorrecta para la pregunta 1</p>]]></text>
+        </answer>
+    </question>
+    <question type="multichoice">
+        <name>
+        <text>Resumen enunciado de la pregunta 2</text>
+        </name>
+        <questiontext format="html">
+        <text><![CDATA[<p>Texto de la pregunta 2 poniendo en <b>negrita</b> las palabras clave</p>]]></text>
+        </questiontext>
+        <defaultgrade>1</defaultgrade>
+        <penalty>0.0000000</penalty>
+        <single>true</single>
+        <answer fraction="100.000" format="html">
+        <text><![CDATA[<p>Opción correcta para la pregunta 2</p>]]></text>
+        </answer>
+        <answer fraction="-33.333" format="html">
+        <text><![CDATA[<p>Opción incorrecta para la pregunta 2</p>]]></text>
+        </answer>
+        <answer fraction="-33.333" format="html">
+        <text><![CDATA[<p>Opción incorrecta para la pregunta 2</p>]]></text>
+        </answer>
+        <answer fraction="-33.333" format="html">
+        <text><![CDATA[<p>Opción incorrecta para la pregunta 2</p>]]></text>
+        </answer>
+    </question>
+    </quiz>
