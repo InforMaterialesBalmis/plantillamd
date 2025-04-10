@@ -18,7 +18,7 @@
 			"\tpuppeteer: true",
 			"\thtml: true",
 			"puppeteer:",
-			"\tscale: 1",
+			"\tscale: 0.9",
 			"\tlandscape: false",
 			"\tformat: \"A4\"",
 			"\tprintBackground: true",
@@ -40,60 +40,39 @@
 			"\t\t\t\t\t\"",
 			"toc:",
 			"\tdepth_from: 1",
-			"\tdepth_to: 5",
+			"\tdepth_to: 3",
 			"\tordered: true",
 			"---"
 		],
 		"description": "Front Matter YAML"
 	},
-	"Imagen centrada en HTML": {
+	"Imagen centrada con estilos": {
 		"scope": "markdown, md",
 		"prefix": "mde_imagenCentrada",
 		"body": [
-			"<div class=\"galeria_imagenes\">",
-			"\t<img height=\"$1\" src=\"$2\">",
-			"</div>"
+			"![nombre](./imagenes/nombre.png){ style=\"display:block;margin:0 auto;width:75%;max-width:400px;\" }",
 		],
-		"description": "Imegen centrada en HTML"
+		"description": "Imagen centrada con estilos"
 	},
-	"Imagen flotante a la derecha de contenido": {
-		"scope": "markdown, md",
-		"prefix": "mde_imagenFlotanteADerecha",
-		"body": [
-			"<div class=\"flotante\", style=\"align-items: center;\">",
-			"<div class=\"flotante_izq\">",
-			"\n<!-- AQUÍ IRÁ TODO EL MARKDOWN FLOTANTE A LA IZQUIERDA DE LA IMAGEN -->\n",
-			"</div>",
-			"<div class=\"flotante_der\">",
-			"\t<img height=\"200px\" src=\"$1\" />",
-			"</div>",
-			"</div>"
-		],
-		"description": "Imagen flotante a la derecha de contenido en HTML"
-	},
-	"Tabla con dos imagenes": {
-		"scope": "markdown, md",
-		"prefix": "mde_tabla_dos_imagenes",
-		"body": [
-			"<span style=\"align: center;\">",
-			"<table align=\"center\">",
-			"<tr>",
-			"<td>",
-			"<div align=\"center\">",
-			"\t<img height=\"$1\" src=\"$2\">",
-			"</div>",
-			"</td>",
-			"<td>",
-			"<div align=\"center\">",
-			"\t<img height=\"$1\" src=\"$2\">",
-			"</div>",
-			"</td>",
-			"</tr>",
-			"</table>",
-			"</span>"
-		],
-		"description": "Tabla con dos imagenes"
-	},
+    "Contenido responsive dos columnas bootstrap": {
+        "scope": "markdown, md",
+        "prefix": "mde_bs5_dosColumnas",
+        "body": [
+            "<div class=\"row\">",
+            "<div class=\"col-sm-6 my-auto\">",
+            "",
+            "<!-- Escribe aquí tu markdown respetando una línea de separacion -->",
+            "",
+            "</div>",
+            "<div class=\"col-sm-6 my-auto\">",
+            "",
+            "<!-- Escribe aquí tu markdown respetando una línea de separacion -->",
+            "",
+            "</div>",
+            "</div>"
+        ],
+        "description": "Contenido responsive dos columnas bootstrap"
+    },
 	"Salto de página en pdf": {
 		"scope": "markdown, md",
 		"prefix": "mde_saltoPagina",
@@ -104,7 +83,7 @@
 	},
 	"Cita autor HTML": {
 		"scope": "markdown, md",
-		"prefix": "mde_citaCentrada",
+		"prefix": "mde_cita_HTML",
 		"body": [
 			"<div class=\"contenedor\">",
 			"\t<div class=\"fondo\">",
@@ -116,22 +95,6 @@
 			"</div>"
 		],
 		"description": "Cita autor HTML"
-	},
-	"Fondo color texto": {
-		"scope": "markdown, md",
-		"prefix": "mde_fondoColorTexto",
-		"body": [
-			"<div style=\"padding: 3pt; background-color: DarkSlateBlue; color: White; margin: 5pt 0pt 5pt 0pt;\">$1.</div>"
-		],
-		"description": "Color de fondo para un texto"
-	},
-	"Color texto": {
-		"scope": "markdown, md",
-		"prefix": "mde_colorTexto",
-		"body": [
-			"<span style=\"color: DarkSlateBlue; font-weight: bold;\">$1</span>"
-		],
-		"description": "Color para texto"
 	},
 	"Por hacer": {
 		"scope": "markdown, md",
@@ -153,25 +116,171 @@
 			"```"
 		],
 		"description": "Bloque en C#"
-	},
-	"PlantUML": {
+	},    
+    "Mermaid Architecture": {
 		"scope": "markdown, md",
-		"prefix": "mde_bloque_puml",
+		"prefix": "mde_mermaid_architecture",
 		"body": [
-			"```puml {align=\"center\", style=\"zoom:1\"}",
-			"@startuml",
-			"skinparam classAttributeIconSize 0",
-			"skinparam ArrowColor Black",
-			"skinparam PackageBackgroundColor WhiteSmoke",
-			"skinparam ClassBorderColor Black",
-			"skinparam ClassBackgroundColor Snow",
-			"",
-			"$1",
-			"",
-			"@enduml",
-			"```"
+            "```mermaid {align=\"center\"}",
+            "architecture-beta",
+            "    group api(logos:aws-lambda)[API]",
+            " ",
+            "    service db(logos:aws-aurora)[Database] in api",
+            "    service disk1(logos:aws-glacier)[Storage] in api",
+            "    service disk2(logos:aws-s3)[Storage] in api",
+            "    service server(logos:aws-ec2)[Server] in api",
+            " ",
+            "    db:L -- R:server",
+            "    disk1:T -- B:server",
+            "    disk2:T -- B:db",
+            "```"
 		],
-		"description": "Bloque puml"
+		"description": "Bloque mermaid architecture"
+	},
+    "PlantUML FolderTree": {
+		"scope": "markdown, md",
+		"prefix": "mde_puml_folder_tree",
+		"body": [
+            "```puml {align=\"center\"}",
+            "@startsalt",
+            " ",
+            "Scale 1.5",
+            " ",
+            "{",
+            "    ^WorkSpace^",
+            "    {T",
+            "    + <&box>[carpeta]",
+            "    ++ <&box>[subcarpeta]",
+            "    +++ archivo_normal.txt",
+            "    +++ archivo_comentado.txt <color:gray>(comentario)",
+            "    ++ **archivo_destacado.txt**",
+            " ",
+            "    }",
+            "}",
+            "@endsalt",
+            "```"
+		],
+		"description": "Bloque puml folder tree"
+	},
+	"PlantUML C4": {
+		"scope": "markdown, md",
+		"prefix": "mde_puml_c4",
+		"body": [
+            "```puml {align=\"center\"}",
+            "@startuml",
+            "' https://github.com/plantuml-stdlib/C4-PlantUML",
+            "' Puedes bajar imágenes de",
+            "' https://github.com/tupadr3/plantuml-icon-font-sprites/blob/main/icons/devicons2/index.md",
+            " ",
+            "!include  https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml",
+            "!include <tupadr3/devicons2/tomcat_line_wordmark>",
+            "!include <tupadr3/devicons2/mysql_wordmark>",
+            "!include <tupadr3/devicons2/android_wordmark>",
+            " ",
+            "Scale 1.0",
+            " ",
+            "HIDE_STEREOTYPE()",
+            "LAYOUT_LEFT_RIGHT()",
+            " ",
+            "System(android, \"Aplicación\", \"Retrofit 2\", $$sprite=\"android_wordmark\")",
+            "Container_Boundary(azure, \"Azure\") {",
+            "    System(api, \"Endpoint\\nAPI Rest\",\"Jakarta EE\", $$sprite=\"tomcat_line_wordmark\")",
+            "    SystemDb(db, \"BD\", \"MySQL\", $$sprite=\"mysql\")",
+            "}",
+            "Rel(android, api, \"API Rest\", \"HTTP\")",
+            "Rel(api, db, \"Eclipselink\", \"JDBC\")",
+            "@enduml",
+            "```"
+		],
+		"description": "Bloque puml C4"
+	},
+    "PlantUML Mindmap": {
+		"scope": "markdown, md, puml",
+		"prefix": "mde_puml_mindmap",
+		"body": [
+            "```puml {align=\"center\"}",
+            "@startmindmap",
+            "",
+            "<style>",
+            "mindmapDiagram {",
+            "    :depth(0) {",
+            "        HorizontalAlignment center",
+            "        LineColor Azure",
+            "        BackgroundColor SteelBlue",
+            "        FontColor Azure",
+            "        FontSize 14",
+            "        FontStyle bold",
+            "        Shadowing 3",
+            "    }",
+            "    :depth(1) {",
+            "        Padding 12",
+            "        Margin 3",
+            "        LineColor SkyBlue",
+            "        LineThickness 2.0",
+            "        BackgroundColor Azure",
+            "        FontColor SteelBlue",
+            "        MaximumWidth 355",
+            "        MinimumWidth 355",
+            "        FontSize 10",
+            "    }",
+            "    :depth(2) {",
+            "        HorizontalAlignment center",
+            "        Margin 2",
+            "        LineColor SkyBlue",
+            "        BackgroundColor Trasparent",
+            "        FontColor SteelBlue",
+            "        FontSize 9",
+            "    }",
+            "    boxless {",
+            "        FontColor SteelBlue",
+            "        FontSize 9",
+            "    }",
+            "    arrow {",
+            "        LineStyle 3",
+            "        LineThickness 1.5",
+            "        LineColor SteelBlue",
+            "    }",
+            "}",
+            "</style>",
+            "",
+            "Scale 1.0",
+            "",
+            "* Ejemplo nodo\\nraiz",
+            "",
+            "** Nodo segundo nivel simple",
+            "",
+            "*** Nodo tercer nivel simple",
+            "",
+            "**_ Nodo segundo nivel\\nsimple sin caja o boxless\\nvan mas unidos",
+            "",
+            "**:==Nodo segundo nivel con lista",
+            "* Primer item",
+            "* Sgundo item",
+            "* Último item acaba en punto y coma;",
+            "",
+            "***_ Nodo tercer nivel simple sin caja o boxless",
+            "",
+            "left direction",
+            "",
+            "** Nodo segundo nivel simple",
+            "",
+            "**:<b>Nodo con HTML</b>",
+            "<code>",
+            "Fuente proporcional",
+            "    respetando sangria",
+            "    especial para código.",
+            "</code>;",
+            "",
+            "",
+            "***:Nodo ",
+            "con saltos",
+            "de línea",
+            "sin LF simple;",
+            "",
+            "@endmindmap",
+            "```"
+		],
+		"description": "Bloque puml Mindmap"
 	},
 	"Importante": {
 		"scope": "markdown, md",
@@ -199,7 +308,7 @@
 		"scope": "markdown, md",
 		"prefix": "mde_caso_de_estudio",
 		"body": [
-			"<div class=\"caso_estudio\">",
+			"<div class=\"box_bg_lightgray\">",
 			"",
 			":mortar_board: **Caso de estudio:**",
 			"",
@@ -209,61 +318,105 @@
 		],
 		"description": "Caso de estudio"
 	},
-	"Ejercicio": {
+    "Propuesta de solución": {
 		"scope": "markdown, md",
-		"prefix": "mde_ejercicio",
+		"prefix": "mde_propuesta_solucion",
 		"body": [
-			"<div class=\"ejercicio\">",
+			"<div class=\"box_bg_lightgreen\">",
 			"",
-			"### :white_check_mark: Ejercicio $1",
+			"### :key: Propuesta de solución a la Actividad $1",
 			"",
-			"</div> <!-- fin ejercicio -->"
+			"</div> <!-- fin propuesta de solución -->"
 		],
-		"description": "Caso de estudio"
+		"description": "Propuesta de solución 🔑"
 	},
 	"Tips": {
 		"scope": "markdown, md",
-		"prefix": "mde_cita_tips",
+		"prefix": "mde_cuadro_ideas",
 		"body": [
-			"> :bulb: **Tips:**",
-			"> ",
-			"> $1",
-			"> "
+			"!!! Tip Ideas",
+			"",
+			"\t$1",
+			""
 		],
-		"description": "Cita con tips"
+		"description": "Cuadro con ideas 💡"
 	},
 	"Resumen": {
 		"scope": "markdown, md",
-		"prefix": "mde_cita_resumen",
+		"prefix": "mde_cuadro_resumen",
 		"body": [
-			"> :mega: **Resumen:**",
-			"> ",
-			"> $1",
-			"> "
+			"!!! Summary Resumen",
+			"",
+			"\t$1",
+			""
 		],
-		"description": "Cita con un resumen"
+		"description": "Cuadro con resumen"
 	},
 	"Aviso": {
 		"scope": "markdown, md",
-		"prefix": "mde_cita_aviso",
+		"prefix": "mde_cuadro_aviso",
 		"body": [
-			"> :warning: **Aviso:**",
-			"> ",
-			"> $1",
-			"> "
+			"!!! Warning Aviso",
+			"",
+			"\t$1",
+			""
 		],
-		"description": "Cita de aviso"
+		"description": "Cuadro con aviso ⚠️"
 	},
-	"Peligro": {
+	"Enlaces": {
 		"scope": "markdown, md",
-		"prefix": "mde_cita_peligro",
+		"prefix": "mde_cuadro_enlaces",
 		"body": [
-			"> :skull: **Peligro:**",
-			"> ",
-			"> $1",
-			"> "
+			"!!! Info Enlaces",
+			"",
+			"\t$1",
+			""
 		],
-		"description": "Cita de peligro"
+		"description": "Cuadro con enlaces ℹ️"
+	},
+    "Cita": {
+		"scope": "markdown, md",
+		"prefix": "mde_cuadro_cita",
+		"body": [
+			"!!! Quote Cita",
+			"",
+			"\t$1",
+			""
+		],
+		"description": "Cuadro con cita"
+	},
+    "Ejemplo": {
+		"scope": "markdown, md",
+		"prefix": "mde_cuadro_ejemplo",
+		"body": [
+			"!!! Example Ejemplo",
+			"",
+			"\t$1",
+			""
+		],
+		"description": "Cuadro con ejemplo"
+	},
+    "Peligro": {
+		"scope": "markdown, md",
+		"prefix": "mde_cuadro_peligro",
+		"body": [
+			"!!! Danger Peligro 💀",
+			"",
+			"\t$1",
+			""
+		],
+		"description": "Cuadro con peligro 💀"
+	},
+    "Pregunta": {
+		"scope": "markdown, md",
+		"prefix": "mde_cuadro_pregunta",
+		"body": [
+			"!!! Question Pregunta",
+			"",
+			"\t$1",
+			""
+		],
+		"description": "Cuadro con pregunta"
 	},
 	"Icono_buena_práctica": {
 		"scope": "markdown, md",

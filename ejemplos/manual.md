@@ -1,6 +1,6 @@
 ---
 title:
-    Apuntes
+    UD1 Título Reducido
 date: 16/06/2021
 export_on_save:
     puppeteer: true
@@ -23,18 +23,18 @@ puppeteer:
             /
             <span class=\"totalPages\"></span>
             <span class=\"title\" style=\"margin-left: 1cm;\"></span>
-            <span style=\"margin-left: 1cm;\">Xusa García y Juanjo Guarinos</span>
+            <span style=\"margin-left: 1cm;\">Departamento de Informática IES Doctor Balmis</span>
         </span>
                     "
 toc:
     depth_from: 1
-    depth_to: 5
+    depth_to: 3
     ordered: false
 ---
 
 # Apuntes {ignore=true}
 
-[Descargar estos apuntes](./apuntes.pdf)
+[Descargar estos apuntes](./manual.pdf)
 
 ## Índice {ignore=true}
 
