@@ -22,8 +22,9 @@ jobs:
     #     run: pandoc ./ejemplos/manual.md -o ./ejemplos/manual.docx --metadata title="Título del Documento"
 
       - name: Upload PDF to Google Drive
-        uses: willo32/google-drive-upload-action@v1
+        uses: adityak74/google-drive-upload-git-action@main
         with:
-            target: ./ejemplos/manual.pdf
+            filename: "ejemplos/manual.pdf"
             credentials: ${{ secrets.GDRIVE_CREDENTIALS }}
-            parent_folder_id: ${{ secrets.GDRIVE_FOLDER_ID }}
+            folderId: ${{ secrets.GDRIVE_FOLDER_ID }}
+            overwrite: "true"
