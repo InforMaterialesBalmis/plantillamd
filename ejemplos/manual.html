@@ -1,0 +1,542 @@
+<!DOCTYPE html><html><head>
+      <title>UD1 Título Reducido</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.css">
+      
+      
+      
+      
+      
+      <style>
+      @import url(https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css);
+code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}@font-face{font-family:"Material Icons";font-style:normal;font-weight:400;src:local("Material Icons"),local("MaterialIcons-Regular"),url("data:application/x-font-woff;charset=utf-8;base64,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") format("woff")}.admonition{box-shadow:0 2px 2px 0 rgba(0,0,0,.14),0 1px 5px 0 rgba(0,0,0,.12),0 3px 1px -2px rgba(0,0,0,.2);position:relative;margin:1.5625em 0;padding:0 1.2rem;border-left:.4rem solid rgba(68,138,255,.8);border-radius:.2rem;background-color:rgba(255,255,255,.05);overflow:auto}.admonition>p{margin-top:.8rem}.admonition>.admonition-title{margin:0 -1.2rem;padding:.8rem 1.2rem .8rem 3.6rem;border-bottom:1px solid rgba(68,138,255,.2);background-color:rgba(68,138,255,.1);font-weight:700}.admonition>.admonition-title:before{position:absolute;left:1.2rem;font-size:1.5rem;color:rgba(68,138,255,.8);content:"\E3C9"}.admonition>.admonition-title:before{font-family:Material Icons;font-style:normal;font-variant:normal;font-weight:400;line-height:2rem;text-transform:none;white-space:nowrap;speak:none;word-wrap:normal;direction:ltr}.admonition.abstract,.admonition.summary,.admonition.tldr{border-left-color:rgba(0,176,255,.8)}.admonition.abstract>.admonition-title,.admonition.summary>.admonition-title,.admonition.tldr>.admonition-title{background-color:rgba(0,176,255,.1);border-bottom-color:rgba(0,176,255,.2)}.admonition.abstract>.admonition-title:before,.admonition.summary>.admonition-title:before,.admonition.tldr>.admonition-title:before{color:#00b0ff;content:"\E8D2"}.admonition.hint,.admonition.tip{border-left-color:rgba(0,191,165,.8)}.admonition.hint>.admonition-title,.admonition.tip>.admonition-title{background-color:rgba(0,191,165,.1);border-bottom-color:rgba(0,191,165,.2)}.admonition.hint>.admonition-title:before,.admonition.tip>.admonition-title:before{color:#00bfa5;content:"\E80E"}.admonition.info,.admonition.todo{border-left-color:rgba(0,184,212,.8)}.admonition.info>.admonition-title,.admonition.todo>.admonition-title{background-color:rgba(0,184,212,.1);border-bottom-color:rgba(0,184,212,.2)}.admonition.info>.admonition-title:before,.admonition.todo>.admonition-title:before{color:#00b8d4;content:"\E88E"}.admonition.check,.admonition.done,.admonition.success{border-left-color:rgba(0,200,83,.8)}.admonition.check>.admonition-title,.admonition.done>.admonition-title,.admonition.success>.admonition-title{background-color:rgba(0,200,83,.1);border-bottom-color:rgba(0,200,83,.2)}.admonition.check>.admonition-title:before,.admonition.done>.admonition-title:before,.admonition.success>.admonition-title:before{color:#00c853;content:"\E876"}.admonition.faq,.admonition.help,.admonition.question{border-left-color:rgba(100,221,23,.8)}.admonition.faq>.admonition-title,.admonition.help>.admonition-title,.admonition.question>.admonition-title{background-color:rgba(100,221,23,.1);border-bottom-color:rgba(100,221,23,.2)}.admonition.faq>.admonition-title:before,.admonition.help>.admonition-title:before,.admonition.question>.admonition-title:before{color:#64dd17;content:"\E887"}.admonition.attention,.admonition.caution,.admonition.warning{border-left-color:rgba(255,145,0,.8)}.admonition.attention>.admonition-title,.admonition.caution>.admonition-title,.admonition.warning>.admonition-title{background-color:rgba(255,145,0,.1);border-bottom-color:rgba(255,145,0,.2)}.admonition.attention>.admonition-title:before{color:#ff9100;content:"\E417"}.admonition.caution>.admonition-title:before,.admonition.warning>.admonition-title:before{color:#ff9100;content:"\E002"}.admonition.fail,.admonition.failure,.admonition.missing{border-left-color:rgba(255,82,82,.8)}.admonition.fail>.admonition-title,.admonition.failure>.admonition-title,.admonition.missing>.admonition-title{background-color:rgba(255,82,82,.1);border-bottom-color:rgba(255,82,82,.2)}.admonition.fail>.admonition-title:before,.admonition.failure>.admonition-title:before,.admonition.missing>.admonition-title:before{color:#ff5252;content:"\E14C"}.admonition.bug,.admonition.danger,.admonition.error{border-left-color:rgba(255,23,68,.8)}.admonition.bug>.admonition-title,.admonition.danger>.admonition-title,.admonition.error>.admonition-title{background-color:rgba(255,23,68,.1);border-bottom-color:rgba(255,23,68,.2)}.admonition.danger>.admonition-title:before{color:#ff1744;content:"\E3E7"}.admonition.error>.admonition-title:before{color:#ff1744;content:"\E14C"}.admonition.bug>.admonition-title:before{color:#ff1744;content:"\E868"}.admonition.example,.admonition.snippet{border-left-color:rgba(0,184,212,.8)}.admonition.example>.admonition-title,.admonition.snippet>.admonition-title{background-color:rgba(0,184,212,.1);border-bottom-color:rgba(0,184,212,.2)}.admonition.example>.admonition-title:before,.admonition.snippet>.admonition-title:before{color:#00b8d4;content:"\E242"}.admonition.cite,.admonition.quote{border-left-color:rgba(158,158,158,.8)}.admonition.cite>.admonition-title,.admonition.quote>.admonition-title{background-color:rgba(158,158,158,.1);border-bottom-color:rgba(158,158,158,.2)}.admonition.cite>.admonition-title:before,.admonition.quote>.admonition-title:before{color:#9e9e9e;content:"\E244"}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+@font-face {
+  font-family: 'Catamaran';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/catamaran/v27/o-0bIpQoyXQa2RxT7-5B6Ryxs2E_6n1iPHjd5a7dvg.ttf) format('truetype');
+}
+.markdown-preview.markdown-preview .box_bg_lightgrey {
+  background-color: #f5f5f5;
+  border: 2px solid #969696;
+  padding: 15px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  box-shadow: 0 0 7px 0 rgba(78, 120, 158, 0.1);
+}
+.markdown-preview.markdown-preview .box_bg_lightgreen {
+  background-color: #f5faf5;
+  border: 2px solid #969b96;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  box-shadow: 0 0 7px 0 rgba(78, 120, 158, 0.1);
+}
+.markdown-preview.markdown-preview .contenedor {
+  display: flex;
+  justify-content: center;
+  margin: 30px auto 30px auto;
+}
+.markdown-preview.markdown-preview .fondo {
+  background: url(https://balmisdigigs.github.io/digitalizacion.github.io/imagenes/fondos/quote.png);
+  background-size: cover;
+  width: 75%;
+  height: 160px;
+  border-radius: 10px;
+  position: relative;
+}
+.markdown-preview.markdown-preview .cita {
+  font-family: Arial;
+  font-style: italic;
+  font-weight: 600;
+  text-align: justify;
+  line-height: 1.5rem;
+  opacity: 0.6;
+  color: white;
+  padding: 5rem;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  font-size: 1.3rem;
+  transform: translate(-50%, -50%);
+}
+.markdown-preview.markdown-preview .abre_comilla {
+  font-family: "Catamaran";
+  font-weight: 600;
+  color: white;
+  padding-left: 30px;
+  position: absolute;
+  font-size: 6rem;
+  transform: translate(0%, -15%);
+}
+.markdown-preview.markdown-preview .cierra_comilla {
+  font-family: "Catamaran";
+  font-weight: 600;
+  color: white;
+  padding-right: 30px;
+  right: 0%;
+  position: absolute;
+  font-size: 6rem;
+  transform: translate(0%, 55%);
+}
+.markdown-preview.markdown-preview .autor {
+  font-family: Arial;
+  color: white;
+  margin: 0px;
+  padding-left: 30px;
+  position: absolute;
+  top: 83%;
+  font-size: 1rem;
+}
+.markdown-preview.markdown-preview .flotante {
+  display: flex;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+@media (max-width: 550px) {
+  .markdown-preview.markdown-preview .flotante {
+    justify-content: center;
+  }
+}
+@media (min-width: 550px) {
+  .markdown-preview.markdown-preview .flotante {
+    justify-content: space-between;
+  }
+}
+@media (max-width: 550px) {
+  .markdown-preview.markdown-preview .flotante {
+    flex-direction: column;
+  }
+}
+@media (min-width: 550px) {
+  .markdown-preview.markdown-preview .flotante {
+    flex-direction: row;
+  }
+}
+.markdown-preview.markdown-preview .flotante_izq {
+  margin-right: 15px;
+}
+@media (max-width: 550px) {
+  .markdown-preview.markdown-preview .flotante_izq {
+    width: 100%;
+  }
+}
+@media (min-width: 550px) {
+  .markdown-preview.markdown-preview .flotante_izq {
+    width: auto;
+  }
+}
+@media (max-width: 550px) {
+  .markdown-preview.markdown-preview .flotante_der {
+    width: 100%;
+  }
+}
+@media (min-width: 550px) {
+  .markdown-preview.markdown-preview .flotante_der {
+    width: auto;
+  }
+}
+.markdown-preview.markdown-preview .galeria_imagenes {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+@media (max-width: 550px) {
+  .markdown-preview.markdown-preview .galeria_imagenes {
+    flex-direction: column;
+  }
+}
+@media (min-width: 550px) {
+  .markdown-preview.markdown-preview .galeria_imagenes {
+    flex-direction: row;
+  }
+}
+
+      </style>
+      <!-- The content below will be included at the end of the <head> element. --><script type="text/javascript">
+  const configureMermaidIconPacks = () => {
+    window["mermaid"].registerIconPacks([
+      {
+        name: "logos",
+        loader: () =>
+          fetch("https://unpkg.com/@iconify-json/logos@1/icons.json").then(
+            (res) => res.json()
+          ),
+      },
+    ]);
+  };
+
+  if (document.readyState !== 'loading') {
+    configureMermaidIconPacks();
+  } else {
+    document.addEventListener("DOMContentLoaded", () => {
+      configureMermaidIconPacks();
+    });
+  }
+</script></head><body for="html-export">
+    
+    
+      <div class="crossnote markdown-preview  ">
+      
+<h1 id="apuntes">Apuntes </h1>
+<p><a href="./manual.pdf">Descargar estos apuntes</a></p>
+<h2 id="índice">Índice </h2>
+
+<div class="md-toc">
+<details style="padding:0;;padding-left:0px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#introducción" class="md-toc-link"><p>Introducción</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#desventajas--1" class="md-toc-link">
+            <p>Desventajas 👎</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#vantajas-1" class="md-toc-link">
+            <p>Vantajas 👍</p>
+
+          </a></div>
+        </div>
+      </details>
+    <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#pre-requisitos" class="md-toc-link">
+            <p>Pre-Requisitos</p>
+
+          </a></div><details style="padding:0;;padding-left:0px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#trabajo-básico-con-markdown" class="md-toc-link"><p>Trabajo básico con markdown</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#elementos-especiales" class="md-toc-link">
+            <p>Elementos especiales</p>
+
+          </a></div>
+        </div>
+      </details>
+    <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#flujo-de-trabajo-y-configuraciones" class="md-toc-link">
+            <p>Flujo de trabajo y configuraciones</p>
+
+          </a></div><details style="padding:0;;padding-left:0px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#admonition" class="md-toc-link"><p>Admonition</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#vantajas-1-1" class="md-toc-link">
+            <p>Vantajas 👍</p>
+
+          </a></div>
+        </div>
+      </details>
+    
+</div>
+<div style="\&quot;page-break-after:always;\&quot;"></div>
+<h2 id="introducción">Introducción </h2>
+<h3 id="desventajas--1">Desventajas 👎 </h3>
+<ul>
+<li>❌ Hacer maquetaciones complejas es '<em>costoso</em>'.</li>
+<li>❌ Requiere del manejo de varias herramientas y tecnologías.</li>
+<li>❌ Requiere de una estructura inicial '<em>compleja</em>'.</li>
+<li>❌ Tiene poco sentido si no se va a generar documentación técnica o se va a trabajar de forma individualizada.</li>
+<li>❌ Documentación '<em>pobre</em>' ne ocasiones.</li>
+</ul>
+<h3 id="vantajas-1">Vantajas 👍 </h3>
+<ul>
+<li>✔️ <strong>Ideal para trabajo en equipo</strong> o en grupo.</li>
+<li>✔️ Homogeneidad en la generación de contenido.</li>
+<li>✔️ Historial y revisión de cambios integrado.</li>
+<li>✔️ <strong>Automatización</strong> en la generación de documentos y despliegue.</li>
+<li>✔️ Permite bifurcaciones.</li>
+<li>✔️ Permite familiarizarse con tecnologías como MarkDown y Git (GitHub) para después aplicarlas con los alumnos en proyectos de grupo o transversales.</li>
+</ul>
+<div style="page-break-after:always;"></div>
+<h2 id="pre-requisitos">Pre-Requisitos </h2>
+<ol>
+<li>
+<p>Tener una <strong>cuenta de GitHub</strong> (Especial para profesores)</p>
+<blockquote>
+<p>📌 <strong>Nota:</strong> Se puede utilizar Azure DevOps pero esta opción no se ha explorado en profundidad y posiblemente precise de extensiones diferentes de VSCode.</p>
+</blockquote>
+</li>
+<li>
+<p>Tener instalado <strong>Google Chrome</strong> en el equipo.</p>
+</li>
+<li>
+<p>Tener instalado <strong><a href="https://git-scm.com/download/win">Git</a></strong></p>
+</li>
+<li>
+<p>Tener el Java Runtime instalado.</p>
+</li>
+<li>
+<p>Tener instalado <strong><a href="https://code.visualstudio.com/">Visual Studio Code</a></strong>.</p>
+<p>Se recomienda asociar un perfil de VSCode con la cuenta de GitHub y añadir las siguiente extensiones:</p>
+<ul>
+<li>
+<p>Markdown All In One. (Permite editar documentos markdown de forma simple).</p>
+</li>
+<li>
+<p>Markdown Preview Enhanced</p>
+</li>
+<li>
+<p>Spanish - Code Spell Checker</p>
+</li>
+<li>
+<p>Git Extension Pack</p>
+</li>
+<li>
+<p>Otras:</p>
+<ul>
+<li>Visual Studio Keymap (O el que prefieras)</li>
+<li>TODO Highlight</li>
+<li>GitHub Pull Requests and Issues</li>
+<li>GitHub Actions</li>
+<li>Convert to Markdown Table.</li>
+<li>markdownlint.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<div style="page-break-after:always;"></div>
+<h2 id="trabajo-básico-con-markdown">Trabajo básico con markdown </h2>
+<p>La extensión markdownlint te ayuda ha escribir markdown normalizado, pero como estamos usando una extensión, no es es muy importante salvo respetar los saltos de línea.</p>
+<p>En <strong><code>cheatsheet_markdown.pdf</code></strong> dispones de las extensiones apropiadas.</p>
+<p>También puedes consultar la documentación oficial en la <a href="https://shd101wyy.github.io/markdown-preview-enhanced/#/">Página de Markdown Preview Enhanced</a></p>
+<blockquote>
+<p>✋ <strong>Importante:</strong></p>
+<p>En la carpeta <strong><code>.vscode/</code></strong> se han pre-definido varios code snippets (fragmentos de código) en en fichero <strong><code>FragmentosPernosalizados.code-snippets</code></strong><br>
+Para usarlos, una vez abierto un fichero con extensión markdown escribiremos <strong><code>mde_</code></strong> seguido de <strong><code>Ctrl + Space</code></strong> que es el (trigger suggestions) en mi KeyMap.</p>
+</blockquote>
+<h3 id="elementos-especiales">Elementos especiales </h3>
+<p>Funciones matemáticas en línea <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>=</mo><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">f(x) = x^2+3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8974em;vertical-align:-0.0833em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">3</span></span></span></span></p>
+<p>Con display en bloque:</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>=</mo><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">f(x) = x^2+3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.9474em;vertical-align:-0.0833em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">3</span></span></span></span></span></p>
+<p>Código indicando el lenguaje a renderizar:</p>
+<pre data-role="codeBlock" data-info="txt" class="language-txt txt"><code>    ```csharp
+    string AYUDA = "csharp{.line-numbers} para numerar las líneas." +
+                "csharp{highlight=2} para resaltar la línea 2" +
+                "csharp{highlight=[2,5-7]} para resaltar la 2 y de la 5 a la 7" +
+                "csharp{highlight=1; .line-numbers} para hacer ambas cosas";
+    ```
+</code></pre><pre data-role="codeBlock" data-info="csharp" class="language-csharp csharp"><code>    <span class="token class-name"><span class="token keyword keyword-string">string</span></span> AYUDA <span class="token operator">=</span> <span class="token string">"csharp{.line-numbers} para numerar las líneas."</span> <span class="token operator">+</span>
+                <span class="token string">"csharp{highlight=2} para resaltar la línea 2"</span> <span class="token operator">+</span>
+                <span class="token string">"csharp{highlight=[2,5-7]} para resaltar la 2 y de la 5 a la 7"</span> <span class="token operator">+</span>
+                <span class="token string">"csharp{highlight=1; .line-numbers} para hacer ambas cosas"</span><span class="token punctuation">;</span>
+</code></pre><p>Diagramas de Graphviz, PlantUML, Mermaid, etc.</p>
+<pre data-role="codeBlock" data-info="txt" class="language-txt txt"><code>    ```puml {align="center", style="zoom:1"}
+    @startmindmap
+    &lt;style&gt;
+    mindmapDiagram {
+        Linecolor black
+        FontName Arial
+        FontSize 14
+        node {
+                Padding 15
+                Margin 15
+                HorizontalAlignment center
+                BackGroundColor white
+            }
+    }
+    &lt;/style&gt;
+
+    *[#snow] Debian
+    ** Ubuntu
+    *** Linux Mint
+    *** Kubuntu
+    *** KDE Neon
+    ** SteamOS
+
+    @endmindmap
+    ```
+</code></pre><p align="center" style="zoom:1" class="puml"><!--?xml version="1.0" encoding="us-ascii" standalone="no"?--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentstyletype="text/css" height="288px" preserveAspectRatio="none" style="width:387px;height:288px;background:#FFFFFF;" version="1.1" viewBox="0 0 387 288" width="387px" zoomAndPan="magnify"><defs></defs><g><rect fill="#FFFAFA" height="46.0986" rx="12.5" ry="12.5" style="stroke:#000000;stroke-width:1.5;" width="75" x="10" y="120.1233"></rect><text fill="#000000" font-family="Arial" font-size="14" lengthAdjust="spacing" textLength="45" x="25" y="148.2551">Debian</text><rect fill="#FFFFFF" height="46.0986" rx="12.5" ry="12.5" style="stroke:#000000;stroke-width:1.5;" width="75" x="145" y="101.0986"></rect><text fill="#000000" font-family="Arial" font-size="14" lengthAdjust="spacing" textLength="45" x="160" y="129.2305">Ubuntu</text><rect fill="#FFFFFF" height="46.0986" rx="12.5" ry="12.5" style="stroke:#000000;stroke-width:1.5;" width="93" x="280" y="25"></rect><text fill="#000000" font-family="Arial" font-size="14" lengthAdjust="spacing" textLength="63" x="295" y="53.1318">Linux Mint</text><path d="M220,124.1479 L230,124.1479 C245,124.1479 255,48.0493 270,48.0493 L280,48.0493 " fill="none" style="stroke:#000000;stroke-width:1.0;"></path><rect fill="#FFFFFF" height="46.0986" rx="12.5" ry="12.5" style="stroke:#000000;stroke-width:1.5;" width="83" x="280" y="101.0986"></rect><text fill="#000000" font-family="Arial" font-size="14" lengthAdjust="spacing" textLength="53" x="295" y="129.2305">Kubuntu</text><path d="M220,124.1479 L230,124.1479 C245,124.1479 255,124.1479 270,124.1479 L280,124.1479 " fill="none" style="stroke:#000000;stroke-width:1.0;"></path><rect fill="#FFFFFF" height="46.0986" rx="12.5" ry="12.5" style="stroke:#000000;stroke-width:1.5;" width="95" x="280" y="177.1973"></rect><text fill="#000000" font-family="Arial" font-size="14" lengthAdjust="spacing" textLength="65" x="295" y="205.3291">KDE Neon</text><path d="M220,124.1479 L230,124.1479 C245,124.1479 255,200.2466 270,200.2466 L280,200.2466 " fill="none" style="stroke:#000000;stroke-width:1.0;"></path><path d="M85,143.1726 L95,143.1726 C110,143.1726 120,124.1479 135,124.1479 L145,124.1479 " fill="none" style="stroke:#000000;stroke-width:1.0;"></path><rect fill="#FFFFFF" height="46.0986" rx="12.5" ry="12.5" style="stroke:#000000;stroke-width:1.5;" width="90" x="145" y="215.2466"></rect><text fill="#000000" font-family="Arial" font-size="14" lengthAdjust="spacing" textLength="60" x="160" y="243.3784">SteamOS</text><path d="M85,143.1726 L95,143.1726 C110,143.1726 120,238.2959 135,238.2959 L145,238.2959 " fill="none" style="stroke:#000000;stroke-width:1.0;"></path><!--SRC=[NL5DJy904BtlhvZ4YvA8Y6XCOunAGGDKYGKlniEq7Sl4TjPiTq4m_dUN1YIuoMvctdpalRStbKLZIvQin4zrLTbbGTSAO8E4ZBd14huz131YeLGNsa1IOFfHOtqjzX5BWbl3MFn1CQy8JZjrBZgZpORj6MEMiUHmUhu7HsXobl_eWpQyyZknk2qubvB4GkeVCdjjTvxIlT5EicxDSJ5ZIxkE7xM-LoSRYQhnUb29Nhn1I0cZg4O3feaJwtpKM4jrNn2ns3eTkbrf6FRWaNGz4Ll2yYbMweQyNniNrRX0iTDe17Co5MilgDbkjJlDiyF9p46V4gyGsgsWqmfQvz3jJM1TFbA7z-CHLDgPb23ZoXfEdFNpHsg0SuHdJu5B2k3fasGG3hS0z6JEHjV6gC5Bj6kuw1pViOMOZ6S2Bv4AwHrTOVr4gjSV4C1qqZ- -L2EKt67kTrEbkjv3QvO1zE9V]--></g></svg></p><div style="page-break-after:always;"></div>
+<p>Uso directo de HTML embebido con estilos definidos en el fichero importado justo después del frontmatter denominado <strong><code>EstilosPersonalizadosMarkdownEnhanced.less</code></strong>. Se puede utilizar para maquetaciones complejas.</p>
+<pre data-role="codeBlock" data-info="html" class="language-html html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>contenedor<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>fondo<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>abre_comilla<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>"<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>cierra_comilla<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>"<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>cita<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Esto es una cita.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>autor<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>- Aquí va el autor.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+</code></pre><div class="contenedor">
+    <div class="fondo">
+        <div class="abre_comilla">"</div>
+        <div class="cierra_comilla">"</div>
+        <div class="cita">Esto es una cita.</div>
+        <div class="autor">- Aquí va el autor.</div>
+    </div>
+</div>
+<p>Importar código <strong>renderizado al vuelo</strong> a gráfico vectorial.</p>
+<pre data-role="codeBlock" data-info="txt" class="language-txt txt"><code>@import "assets//linux_kernel.dot" {align="center", style="zoom:0.4"}
+</code></pre><p></p><pre class="language-text">EntryNotFound (FileSystemError): Error: ENOENT: no such file or directory, open 'c:\Users\Juanjo\Desktop\Git\Materiales\plantillamd\ejemplos\assets\linux_kernel.dot'</pre>  <p></p>
+<div style="page-break-after:always;"></div>
+<h2 id="flujo-de-trabajo-y-configuraciones">Flujo de trabajo y configuraciones </h2>
+<ol>
+<li>
+<p>Trabajar en una rama con nuestro nombre y asegurarnos que trabajamos en ella.</p>
+</li>
+<li>
+<p>(Opcional) Arrastrar el issue a la columna In Progress del Kanban.</p>
+</li>
+<li>
+<p>Al finalizar la sesión:</p>
+<pre data-role="codeBlock" data-info="cmd" class="language-cmd cmd"><code>git add . 
+git commit -m "mensaje"
+git push
+</code></pre></li>
+<li>
+<p>Aquí puedo volver al punto 2 y seguir trabajando en el issue.</p>
+</li>
+<li>
+<p>Al finalizar mi trabajo, inicio el proceso de Revisión/Integración.</p>
+<ol>
+<li>
+<p>Ejecutar este Wroflow (está en <strong><code>posible_workflow_github.cmd</code></strong>).</p>
+<pre data-role="codeBlock" data-info="cmd" class="language-cmd cmd"><code>git fetch origin
+git merge origin/main
+git push
+
+git checkout main
+git merge MI_RAMA
+git push
+git checkout MI_RAMA
+</code></pre></li>
+<li>
+<p>Crear un <strong>Pull Request</strong> al revisor/a/es.</p>
+<ul>
+<li>Se solicitará de la rama con mi nombre sobre el Main o de mi fork sobre el repositorio original.</li>
+<li>Se asignará revisor/a/es.</li>
+<li>Una vez esté revisado 'mergeado' el pull request en la rama principal cerrar el issue y arrastrarlo a la columna Done del Kanban (opcional).</li>
+</ul>
+</li>
+<li>
+<p>Si solo queremos actualizarnos a como esté el main</p>
+<pre data-role="codeBlock" data-info="cmd" class="language-cmd cmd"><code>git checkout main
+git pull
+git checkout MI_RAMA
+git merge main
+</code></pre></li>
+<li>
+<p>Una vez se ejecute el push en la rama main de GitHub se desencadenan las siguientes acciones en <strong><code>.github\workflows\publicar_web_action.yaml</code></strong></p>
+<pre data-role="codeBlock" data-info="yaml" class="language-yaml yaml"><code><span class="token comment"># Al hacerse Push en master</span>
+<span class="token key atrule">on</span><span class="token punctuation">:</span>
+<span class="token key atrule">push</span><span class="token punctuation">:</span>
+    <span class="token key atrule">branches</span><span class="token punctuation">:</span> <span class="token punctuation">[</span> main <span class="token punctuation">]</span>
+
+<span class="token comment"># Ejecuta este workflow secuencial (otro job se ejecutaría en paralelo)</span>
+<span class="token key atrule">jobs</span><span class="token punctuation">:</span>
+<span class="token comment"># Solo hay un trabajo llamado sincronizaA</span>
+<span class="token key atrule">publica</span><span class="token punctuation">:</span>
+    <span class="token comment"># Se ejecuta en una máquina de ubuntu</span>
+    <span class="token key atrule">runs-on</span><span class="token punctuation">:</span> ubuntu<span class="token punctuation">-</span>latest
+
+    <span class="token comment"># Secuencia de pasos</span>
+    <span class="token key atrule">steps</span><span class="token punctuation">:</span>
+    <span class="token comment"># Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it</span>
+    <span class="token punctuation">-</span> <span class="token key atrule">uses</span><span class="token punctuation">:</span> actions/checkout@v4
+
+    <span class="token comment"># Runs a set of commands using the runners shell</span>
+    <span class="token comment"># DEBO ELIMINAR CON rm AQUELLAS CARPETAS QUE NO QUIERO PUBLICAR !!!</span>
+    <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Crea carpeta a publicar en www
+        <span class="token key atrule">run</span><span class="token punctuation">:</span> <span class="token punctuation">|</span><span class="token scalar string">
+        rsync -av --prune-empty-dirs --include-from=rsync_files.txt ./ www/                 
+        rm -Rv www/ejemplos
+        rm -Rv www/.crossnote</span>
+
+    <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Despliego www en el repo donde tengo github pages
+        <span class="token key atrule">uses</span><span class="token punctuation">:</span> peaceiris/actions<span class="token punctuation">-</span>gh<span class="token punctuation">-</span>pages@v3
+        <span class="token key atrule">with</span><span class="token punctuation">:</span>
+        <span class="token key atrule">personal_token</span><span class="token punctuation">:</span> $<span class="token punctuation">{</span><span class="token punctuation">{</span> secrets.DEPLOY_GH_KEY <span class="token punctuation">}</span><span class="token punctuation">}</span>
+        <span class="token key atrule">external_repository</span><span class="token punctuation">:</span> ORGANIZACION/REPOPUBLICO.github.io
+        <span class="token key atrule">publish_branch</span><span class="token punctuation">:</span> main
+        <span class="token key atrule">publish_dir</span><span class="token punctuation">:</span> ./www
+        <span class="token key atrule">allow_empty_commit</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+</code></pre><p>Contenido de <strong><code>rsync_files.txt</code></strong> para que se publique solo lo necesario.</p>
+<pre data-role="codeBlock" data-info="txt" class="language-txt txt"><code> + */
+ + *.html
+ + *.pdf
+ + *.png
+ + *.jpeg
+ + *.jpg
+ + *_ejemplo.cs
+ + *_caso_de_estudio.zip
+ + *.svg
+ - *
+</code></pre></li>
+</ol>
+</li>
+</ol>
+<div style="page-break-after:always;"></div>
+<h2 id="admonition">Admonition </h2>
+<blockquote>
+<p>📌 <strong>Nota:</strong></p>
+<p>Para configurar <strong><code>secrets.DEPLOY_GH_KEY</code></strong></p>
+<ol>
+<li>Ir a <a href="https://github.com/settings/tokens">https://github.com/settings/tokens</a> y crear un token de acceso a tus repositorios.</li>
+<li>Ir al repositorio de trabajo <a href="https://URLDeTuRepo/settings/secrets/actions">https://URLDeTuRepo/settings/secrets/actions</a> y añadir un secreto llamado <strong><code>DEPLOY_GH_KEY</code></strong> con el token generado en el paso 1.</li>
+</ol>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">"Nota"</p>
+<p>Para configurar <strong><code>secrets.DEPLOY_GH_KEY</code></strong></p>
+<ol>
+<li>Ir a</li>
+</ol>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">"Advertencia"</p>
+<p>Para configurar <strong><code>secrets.DEPLOY_GH_KEY</code></strong></p>
+<ol>
+<li>Ir a</li>
+</ol>
+</div>
+<div style="display: flex; justify-content: space-evenly; align-items: center; margin-top: 15px; margin-bottom: 15px">
+    <img height="200" src="assets//tabs_con_scroll.png">
+    <img height="200" src="assets//tabs_sin_scroll.png">
+</div>
+<div class="flotante" ,="" style="align-items: center;">
+<div class="flotante_izq">
+<h3 id="vantajas-1-1">Vantajas 👍 </h3>
+<ul>
+<li>✔️ <strong>Ideal para trabajo en equipo</strong> o en grupo.</li>
+<li>✔️ Homogeneidad en la generación de contenido.</li>
+<li>✔️ Historial y revisión de cambios integrado.</li>
+<li>✔️ <strong>Automatización</strong> en la generación de documentos y despliegue.</li>
+<li>✔️ Permite bifurcaciones.</li>
+<li>✔️ Permite familiarizarse con tecnologías como MarkDown y Git (GitHub) para después aplicarlas con los alumnos en proyectos de grupo o transversales</li>
+</ul>
+</div>
+<div class="flotante_der">
+<p align="center" class="puml"><!--?xml version="1.0" encoding="us-ascii" standalone="no"?--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentstyletype="text/css" height="172.8px" preserveAspectRatio="none" style="width:232px;height:172px;background:#FFFFFF;" version="1.1" viewBox="0 0 232 172" width="232.2px" zoomAndPan="magnify"><defs></defs><g><rect fill="#FFFAFA" height="27.6592" rx="7.5" ry="7.5" style="stroke:#000000;stroke-width:0.8999999999999999;" width="45" x="6" y="72.074"></rect><text fill="#000000" font-family="Arial" font-size="8.4" lengthAdjust="spacing" textLength="27" x="15" y="88.9531">Debian</text><rect fill="#FFFFFF" height="27.6592" rx="7.5" ry="7.5" style="stroke:#000000;stroke-width:0.8999999999999999;" width="45" x="87" y="60.6592"></rect><text fill="#000000" font-family="Arial" font-size="8.4" lengthAdjust="spacing" textLength="27" x="96" y="77.5383">Ubuntu</text><rect fill="#FFFFFF" height="27.6592" rx="7.5" ry="7.5" style="stroke:#000000;stroke-width:0.8999999999999999;" width="55.8" x="168" y="15"></rect><text fill="#000000" font-family="Arial" font-size="8.4" lengthAdjust="spacing" textLength="37.8" x="177" y="31.8791">Linux Mint</text><path d="M132,74.4888 L138,74.4888 C147,74.4888 153,28.8296 162,28.8296 L168,28.8296 " fill="none" style="stroke:#000000;stroke-width:0.6;"></path><rect fill="#FFFFFF" height="27.6592" rx="7.5" ry="7.5" style="stroke:#000000;stroke-width:0.8999999999999999;" width="49.8" x="168" y="60.6592"></rect><text fill="#000000" font-family="Arial" font-size="8.4" lengthAdjust="spacing" textLength="31.8" x="177" y="77.5383">Kubuntu</text><path d="M132,74.4888 L138,74.4888 C147,74.4888 153,74.4888 162,74.4888 L168,74.4888 " fill="none" style="stroke:#000000;stroke-width:0.6;"></path><rect fill="#FFFFFF" height="27.6592" rx="7.5" ry="7.5" style="stroke:#000000;stroke-width:0.8999999999999999;" width="57" x="168" y="106.3184"></rect><text fill="#000000" font-family="Arial" font-size="8.4" lengthAdjust="spacing" textLength="39" x="177" y="123.1975">KDE Neon</text><path d="M132,74.4888 L138,74.4888 C147,74.4888 153,120.1479 162,120.1479 L168,120.1479 " fill="none" style="stroke:#000000;stroke-width:0.6;"></path><path d="M51,85.9036 L57,85.9036 C66,85.9036 72,74.4888 81,74.4888 L87,74.4888 " fill="none" style="stroke:#000000;stroke-width:0.6;"></path><rect fill="#FFFFFF" height="27.6592" rx="7.5" ry="7.5" style="stroke:#000000;stroke-width:0.8999999999999999;" width="54" x="87" y="129.1479"></rect><text fill="#000000" font-family="Arial" font-size="8.4" lengthAdjust="spacing" textLength="36" x="96" y="146.0271">SteamOS</text><path d="M51,85.9036 L57,85.9036 C66,85.9036 72,142.9775 81,142.9775 L87,142.9775 " fill="none" style="stroke:#000000;stroke-width:0.6;"></path><!--SRC=[NL5TI-j047tVNp7WYnQiiRUA116rQPMsqM9QNyI7IJB6uMvcPRDRl_2_kmsjHHTscJdpmJbdpnk7rjKiPOqlIZK5QeAeUwpKQUFUDPqfW7KrOQmirl0P880f2nL66mkvnk9_YusCk1ki2Iuie_w1CluWEEotkPYIrXisPuPboLB1uT4lE4LRiVn5hutbZx0JzONcIceI1qLuoFvgkmoKhgpnKWvQZg_Fx6ZRyQLMz_HWBL5r7dOQCQ-Fa53EAAhJWKNknVaGTLPI_HkaBAvD9tvRcYH3k27JJcIEiBxDb3gduDV6qPb6SOjq2ako3PiWgDkBUltklztviuSHvK4XzAAu7yNH4Go6SrYLzzJkrMmAZV6s82YvSPPpxyBydXhZ4k4kKE2QOhXz8Hadamq0GrcoDQqnQdoVRXkE-_kNx20Z6vZ0VQeIUaAlNPWepEe3ObZCH_idQefIUQp2RchK87Zex7iCm-mR]--></g></svg></p></div>
+</div>
+<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+  
+    </body></html>

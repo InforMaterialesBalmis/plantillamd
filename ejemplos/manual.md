@@ -264,8 +264,6 @@ Importar código **renderizado al vuelo** a gráfico vectorial.
    4. Una vez se ejecute el push en la rama main de GitHub se desencadenan las siguientes acciones en **`.github\workflows\publicar_web_action.yaml`**
 
         ```yaml
-        name: PublicaWeb
-
         # Al hacerse Push en master
         on:
         push:
@@ -273,35 +271,29 @@ Importar código **renderizado al vuelo** a gráfico vectorial.
 
         # Ejecuta este workflow secuencial (otro job se ejecutaría en paralelo)
         jobs:
-        # Solo hay un trabajo llamado publica
+        # Solo hay un trabajo llamado sincronizaA
         publica:
             # Se ejecuta en una máquina de ubuntu
             runs-on: ubuntu-latest
 
             # Secuencia de pasos
             steps:
-            # Hace un un checkout del espacio de trabajo actual ($GITHUB_WORKSPACE) 
-            # y después un checkout a la rama master
-            - uses: actions/checkout@v2
+            # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+            - uses: actions/checkout@v4
 
-            # Ejecuta esta lista de comando en un bash de ubuntu donde ...
-            # Creo una carpeta a publicar en www eliminando carpetas vacías y 
-            # solo las extensiones indicadas en rsync_files.txt
-            # Posteriormente elimino carpetas que no quiero que se publiquen
+            # Runs a set of commands using the runners shell
+            # DEBO ELIMINAR CON rm AQUELLAS CARPETAS QUE NO QUIERO PUBLICAR !!!
             - name: Crea carpeta a publicar en www
                 run: |
-                rsync -av --prune-empty-dirs --include-from=rsync_files.txt ./ www/
-                rm -Rv www/Examenes
-                rm -Rv www/Proyectos
-                rm -Rv www/Bibliografía
+                rsync -av --prune-empty-dirs --include-from=rsync_files.txt ./ www/                 
+                rm -Rv www/ejemplos
+                rm -Rv www/.crossnote
 
-            # Publico en la rama main del repositorio donde tengo 
-            # github pages activado el contenido sincronizado en www ...
-            - name: Despliego www en el repo donde tengo github pages activado
+            - name: Despliego www en el repo donde tengo github pages
                 uses: peaceiris/actions-gh-pages@v3
                 with:
                 personal_token: ${{ secrets.DEPLOY_GH_KEY }}
-                external_repository: nombre del repositorio sin https
+                external_repository: ORGANIZACION/REPOPUBLICO.github.io
                 publish_branch: main
                 publish_dir: ./www
                 allow_empty_commit: true

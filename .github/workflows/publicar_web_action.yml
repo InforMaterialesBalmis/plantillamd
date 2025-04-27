@@ -1,36 +1,29 @@
-name: PublicaWeb
+name: Convert Markdown to PDF and Upload to Google Drive
 
-# Al hacerse Push en master
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main
 
-# Ejecuta este workflow secuencial (otro job se ejecutaría en paralelo)
 jobs:
-  # Solo hay un trabajo llamado sincronizaA
-  publica:
-    # Se ejecuta en una máquina de ubuntu
+  build-convert-upload:
     runs-on: ubuntu-latest
 
-    # Secuencia de pasos
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-      # Runs a set of commands using the runners shell
-      - name: Crea carpeta a publicar en www
-        run: |
-          rsync -av --prune-empty-dirs --include-from=rsync_files.txt ./ www/
-          rm -Rv www/ejemplos
-          rm -Rv www/.crossnote
+    #   - name: Install Pandoc
+    #     run: |
+    #       sudo apt-get update
+    #       sudo apt-get install -y pandoc
 
-      - name: Despliego www en el repo donde tengo github pages
-        uses: peaceiris/actions-gh-pages@v3
+    #   - name: Convert Markdown to DOCX
+    #     run: pandoc ./ejemplos/manual.md -o ./ejemplos/manual.docx --metadata title="Título del Documento"
+
+      - name: Upload PDF to Google Drive
+        uses: upload-google-drive/upload-google-drive@main
         with:
-          personal_token: ${{ secrets.DEPLOY_GH_KEY }}
-          external_repository: ORGANIZACION/REPOPUBLICO.github.io
-          publish_branch: main
-          publish_dir: ./www
-          allow_empty_commit: true
-
-
+          folder-id: ${{ secrets.GDRIVE_FOLDER_ID }}
+          credentials: ${{ secrets.GDRIVE_CREDENTIALS }}
+          source: ./ejemplos/manual.pdf
