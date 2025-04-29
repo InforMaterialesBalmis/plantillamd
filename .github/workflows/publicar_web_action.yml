@@ -13,14 +13,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-    #   - name: Install Pandoc
-    #     run: |
-    #       sudo apt-get update
-    #       sudo apt-get install -y pandoc
-
-    #   - name: Convert Markdown to DOCX
-    #     run: pandoc ./ejemplos/manual.md -o ./ejemplos/manual.docx --metadata title="Título del Documento"
-
       - name: Upload PDF to Google Drive
         uses: adityak74/google-drive-upload-git-action@main
         with:

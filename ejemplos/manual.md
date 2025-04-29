@@ -28,7 +28,7 @@ puppeteer:
                     "
 toc:
     depth_from: 1
-    depth_to: 3
+    depth_to: 4
     ordered: false
 ---
 
@@ -42,66 +42,362 @@ toc:
 
 <div style=\"page-break-after:always;\"></div>
 
-## Introducción
+## Pre-Requisitos
 
-### Desventajas :-1: 
+1. Tener una **cuenta de GitHub**.
+2. Tener instalado **Google Chrome** en el equipo.
+3. Tener instalado **[Git](https://git-scm.com/download/win)** en local.
+4. Tener el Java Runtime instalado mínimo la versión 17.
+5. Tener instalado **[Visual Studio Code](https://code.visualstudio.com/)**- Puedes descargar la versión portable ya preparada de **[GDrive](https://drive.google.com/drive/u/0/folders/1LaryOjKFO4osOZkenHwuBcZ4U7rH1Gan)** en la carpeta del Departamento.
 
-* :x: Hacer maquetaciones complejas es '*costoso*'.
-* :x: Requiere del manejo de varias herramientas y tecnologías.
-* :x: Requiere de una estructura inicial '*compleja*'.
-* :x: Tiene poco sentido si no se va a generar documentación técnica o se va a trabajar de forma individualizada.
-* :x: Documentación '*pobre*' ne ocasiones.
+    Si ya lo tienes instalado puedes crearte un perfil personalizado de "***Apuntes con Markdown***" con las siguientes extensiones:
 
-### Vantajas :+1: 
+      * **Spanish Language Pack for VSCode** (para traducir el IDE al español)
+      * **Code Spell Checker** (para detectar corrección ortográfica y sintáctica en  textos)
+      * ***Spanish - Code Spell Checker*** (paquete de idioma español para el corrector ortográfico)
+      * **Open in browser** (para abrir un archivo HTML en el navegador con botón derecho)
+      * **Markdown All in One** (para trabajar con archivos markdown)
+      * **Markdown Preview Enhanced** (para visualizar el archivo .md)
+      * **markdownlint** (para comprobar el contenido del archivo)
+      * **PlauntUML** (para mostrar colores en bloques de código de diagramas)
+      * Visual Studio Keymap (para usar los atajos de teclado de Visual Studio)
 
-* :heavy_check_mark: **Ideal para trabajo en equipo** o en grupo.
-* :heavy_check_mark: Homogeneidad en la generación de contenido.
-* :heavy_check_mark: Historial y revisión de cambios integrado.
-* :heavy_check_mark: **Automatización** en la generación de documentos y despliegue.
-* :heavy_check_mark: Permite bifurcaciones.
-* :heavy_check_mark: Permite familiarizarse con tecnologías como MarkDown y Git (GitHub) para después aplicarlas con los alumnos en proyectos de grupo o transversales.
+### Esquema de carpetas tras la instalación
+
+<div class="row">
+<div class="col-sm-7">
+
+En la capeta **`[data]`** está la configuración local del usuario de VSCode, en la carpeta **`[extensions]`** están las extensiones instaladas y en la carpeta descritas en el punto anterior y en la carpeta **`[user-data]`** está la configuración global del usuario de VSCode como pueden ser los snippets, temas, configuraciones de usuario, etc.
+
+</div>
+<div class="col-sm-5">
+
+```puml {align="center"}
+@startsalt
+Scale 1.2
+ 
+{
+    {T
+    + <&box>[VSCode-win32-x64-X.X.X-markdown]
+    ++ ...
+    ++ **<&box>[data]**
+    +++ <&box>[user-data]
+    +++ <&box>[extensions]
+    ++ **<&box>[jar]**
+    +++ plantuml-gplv2-X.X.X.jar
+    }
+}
+@endsalt
+```
+
+</div>
+</div>
+
+En la carpeta **`[jar]`** está el ejecutable de PlantUML que markdown-preview-enhanced utiliza para renderizar los diagramas, ya está preconfigurado en la instalación portable, pero para funcionar necesitarás tener el JRE de Java instalado como se comentaba anteriormente.
 
 <div style="page-break-after:always;"></div>
 
-## Pre-Requisitos
+## Creación o acceso al Workspace
 
-1. Tener una **cuenta de GitHub** (Especial para profesores)
+Se ha creado una cuenta de GitHub para el departamento de informática del IES Doctor Balmis, para gestionar los repositorios con materiales para los módulos de Digitalización y Sosténibilidad. La cuenta es **`infor.materiales@iesdoctorbalmis.com`** y la clave de acceso es la usar de forma tradicional en el departamento para administración.
 
-    > :pushpin: **Nota:** Se puede utilizar Azure DevOps pero esta opción no se ha explorado en profundidad y posiblemente precise de extensiones diferentes de VSCode.
+!!! warning Aviso
+    Esta cuenta es solo para labores administrativas y no se debe usar para trabajos personales. Por lo que para acceder o clonar los repositorios de trabajo hay que usar la cuenta personar de GitHub y si no se tiene acceso a alguna organización dependiente de esta cuenta. Podemos usar esta cuenta para añadirnos como colaboradores en la mismas.
 
-2. Tener instalado **Google Chrome** en el equipo.
-3. Tener instalado **[Git](https://git-scm.com/download/win)**
-4. Tener el Java Runtime instalado.
-5. Tener instalado **[Visual Studio Code](https://code.visualstudio.com/)**.
+Tendremos 2 opciones:
 
-    Se recomienda asociar un perfil de VSCode con la cuenta de GitHub y añadir las siguiente extensiones:
-    * Markdown All In One. (Permite editar documentos markdown de forma simple).
-    * Markdown Preview Enhanced
-    * Spanish - Code Spell Checker
-    * Git Extension Pack
-    * Otras:
+1. Trabajar en algún proyecto ya existente en las organizaciones de GitHub para lo cual deberemos simplemente clonarlo. (Busca en Google cómo clonar un repositorio de GitHub).
 
-      * Visual Studio Keymap (O el que prefieras)
-      * TODO Highlight
-      * GitHub Pull Requests and Issues
-      * GitHub Actions
-      * Convert to Markdown Table.
-      * markdownlint.
+2. (**Propuesta**) Partir de la plantilla de trabajo que se ha creado para el departamento. Para ello, deberemos seguir los siguientes pasos:
+
+    1. **Si es la primera vez que trabajas con git**, deberás configurar tu nombre y correo electrónico. Para ello, puedes usar el siguiente comando en la terminal de Windows o Git Bash:
+
+        ```cmd
+        C:\materiales> git config --global user.name "Nombre Apellido"
+        C:\materiales> git config --global user.email "cuenta@iesdoctorbalmis.com"
+        ```
+
+    2. En el siguiente **[repositorio público de GitHub](https://github.com/InforMaterialesBalmis/plantillamd)**, debes clonar el repositorio en tu equipo local. Pude que te pida autenticación de acceso a GitHub por lo que te aparecerá una atenticación inicial que te generará una credenciales de acceso desde tu equipo local. Para ello, puedes usar el siguiente comando en la terminal de Windows o Git Bash:
+
+        ```cmd
+        C:\materiales> git clone https://github.com/InforMaterialesBalmis/plantillamd.git
+        ```
+
+    3. Una vez clonado el repositorio, debes borrar la carpeta **`.git`** que se ha creado al clonar el repositorio. Para ello, puedes usar el siguiente comando en la terminal de Windows o Git Bash:
+
+        ```cmd
+        C:\materiales> cd plantillamd
+        C:\materiales\plantillamd> del /s /q .git
+        ```
+
+    4. Crea un repositorio en tu cuenta de GitHub y vuelve a inicializar el repositorio en la carpeta clonada. Para ello, puedes usar el siguiente comando en la terminal de Windows o Git Bash:
+
+        ```cmd
+        C:\materiales\plantillamd> git init
+        C:\materiales\plantillamd> git add .
+        C:\materiales\plantillamd> git commit -m "Iniciando Materiales"
+        C:\materiales\plantillamd> git remote add origin <URL_REPOSITORIO_GITHUB>
+        C:\materiales\plantillamd> git push -u origin main
+        ```
 
 <div style="page-break-after:always;"></div>
 
 ## Trabajo básico con markdown
 
-La extensión markdownlint te ayuda ha escribir markdown normalizado, pero como estamos usando una extensión, no es es muy importante salvo respetar los saltos de línea.
+Dispones de la siguiente página con la documentación del Plugin en la **[página de Markdown Preview Enhanced](https://shd101wyy.github.io/markdown-preview-enhanced)**
 
-En **`cheatsheet_markdown.pdf`** dispones de las extensiones apropiadas.
+Dispones de una guía básica de **[Markdown Básico](https://shd101wyy.github.io/markdown-preview-enhanced/#/markdown-basics)** en la misma página.
 
-También puedes consultar la documentación oficial en la [Página de Markdown Preview Enhanced](https://shd101wyy.github.io/markdown-preview-enhanced/#/)
+!!! Note Nota
+    La extensión **markdownlint** te ayuda ha escribir markdown normalizado, pero como estamos usando una extensión, no es es muy importante salvo respetar los saltos de línea.
+    En la carpeta **`.vscode/`** se han pre-definido varios code snippets (fragmentos de código) en en fichero **`FragmentosPernosalizados.code-snippets`**
+    Para usarlos, una vez abierto un fichero con extensión markdown escribiremos **`mde_`** seguido de **`Ctrl + Space`** que es el (trigger suggestions) en mi KeyMap.
 
-> :hand: **Importante:**
-> 
-> En la carpeta **`.vscode/`** se han pre-definido varios code snippets (fragmentos de código) en en fichero **`FragmentosPernosalizados.code-snippets`**
-> Para usarlos, una vez abierto un fichero con extensión markdown escribiremos **`mde_`** seguido de **`Ctrl + Space`** que es el (trigger suggestions) en mi KeyMap.
+### Markdown básico
+
+#### Encabezados
+
+```markdown
+# Título 1
+## Título 2
+### Título 3
+...
+```
+
+#### Párrafos
+
+Estándar en Markdown, solo hay que dejar una línea en blanco entre párrafos.
+
+```markdown
+Párrafo con una palabra en **negrita**
+Párrafo con una palabra en *cursiva*
+Párrafo con una palabra en ***negrita y cursiva***
+Párrafo con una palabra en ~~tachado~~
+Párrafo con una palabra en `código`
+Párrafo con una palabra en **`código en negrita`**
+Párrafo con una palabra en *`código en cursiva`*
+Párrafo con una palabra en ***`código en negrita y cursiva`***
+
+Los metacaracteres de Markdown son: `*`, `_`, `~`, `\` y `#` y 
+deberás escaparlos con `\` si quieres que aparezcan en el texto.
+```
+
+!!! Note Nota
+    Al tener el plugin "**Markdown All in One**" instalado, si selecciones una palabra y escribes un **\*** o **\`** se le añade el formato correspondiente a ambos lados de la selección y no sustituye el texto seleccionado.
+
+#### Citas
+
+En el estándar de Markdown, cada párrafo precedido del caracter **`>`** formará parte de la cita.
+
+<div class="row">
+<div class="col-sm-6 my-auto">
+
+```markdown
+> Un país, una civilización se puede juzgar  
+> por la forma en que trata a sus animales.  
+> — Mahatma Gandhi
+```
+
+</div>
+<div class="col-sm-6 my-auto">
+
+> Un país, una civilización se puede juzgar  
+> por la forma en que trata a sus animales.  
+> — Mahatma Gandhi
+
+</div>
+</div>
+
+##### Citas fuera del stándar
+
+También podremos definir una cita con las **[admonitions de Mkdocs](https://squidfunk.github.io/mkdocs-material/reference/admonitions/)**. Las tienes definidas como fragmentos de código con la raíz **`mde_cuadro_`** por tanto si pulsas **`mde_cuadro_`** seguido de **`Ctrl + Space`** te ofrecerá **`mde_cuadro_cita`** que te insertará el fragmento para citas.
+
+<div class="row">
+<div class="col-sm-6 my-auto">
+
+```markdown
+!!! Quote Cita
+    Un país, una civilización se puede juzgar 
+    por la forma en que trata a sus animales.  
+    — Mahatma Gandhi
+```
+
+</div>
+<div class="col-sm-6 my-auto">
+
+!!! Quote Cita
+    Un país, una civilización se puede juzgar
+    por la forma en que trata a sus animales.  
+    — Mahatma Gandhi
+
+</div>
+</div>
+
+<div style="page-break-after:always;"></div>
+
+Un poco más vistosas, las tienes definidas como fragmentos de código con **`mde_cita_HTML`** que generará lo siguiente:
+
+```html
+<div class="contenedor">
+    <div class="fondo">
+        <div class="abre_comilla">"</div>
+        <div class="cierra_comilla">"</div>
+        <div class="cita">Un país, una civilización se puede 
+        juzgar por la forma en que trata a sus animales.</div>
+        <div class="autor">- Mahatma Gandhi</div>
+    </div>
+</div>
+```
+
+<div class="contenedor">
+    <div class="fondo">
+        <div class="abre_comilla">"</div>
+        <div class="cierra_comilla">"</div>
+        <div class="cita">Un país, una civilización se puede juzgar 
+        por la forma en que trata a sus animales.</div>
+        <div class="autor">- Mahatma Gandhi</div>
+    </div>
+</div>
+
+<div style="page-break-after:always;"></div>
+
+### Listas
+
+```markdown
+* Elemento 1
+* Elemento 2
+  * Elemento 2.1 (alineado primera letra item padre)
+    * Elemento 2.1.1
+* Elemento 3
+```
+
+```markdown
+1. Elemento 1
+2. Elemento 2
+   1. Elemento 2.1 (alineado primera letra item padre)
+      1. Elemento 2.1.1antes)
+3. Elemento 3
+```
+
+Respetar los espacios es muy importante para que cierto contenido pertenezca o no a un elemento de la lista.
+
+<div class="row">
+<div class="col-sm-6 my-auto">
+
+```markdown
+* Elemento 1
+  Este párrafo pertenece al elemento 1
+  * Conviene separar las listas indentadas
+    Este párrafo pertenece al elemento 1.1
+    Este párrafo pertenece al elemento 1.1
+
+  Separa con un **salto de línea** para cotinuar
+  en el nivel anterior
+* Elemento 2
+  Este párrafo pertenece al elemento 2
+  Este párrafo pertenece al elemento 2
+
+Este párrafo ya está fuera de la lista
+```
+
+</div>
+<div class="col-sm-6 my-auto">
+
+* Elemento 1
+  Este párrafo pertenece al elemento 1
+  * Conviene separar las listas indentadas
+    Este párrafo pertenece al elemento 1.1
+    Este párrafo pertenece al elemento 1.1
+
+  Separa con un **salto de línea** para cotinuar
+  en el nivel anterior
+* Elemento 2
+  Este párrafo pertenece al elemento 2
+  Este párrafo pertenece al elemento 2
+
+Este párrafo ya está fuera de la lista
+
+</div>
+</div>
+
+### Tablas simples
+
+<div class="row">
+<div class="col-sm-6 my-auto">
+
+```markdown
+| Columna 1  | Columna 2  | Columna 3  |
+| ---------- | ---------- | ---------- |
+| Elemento 1 | Elemento 2 | Elemento 3 |
+| Elemento 4 | Elemento 5 | Elemento 6 |
+```
+
+</div>
+<div class="col-sm-6 my-auto">
+
+| Columna 1  | Columna 2  | Columna 3  |
+| ---------- | ---------- | ---------- |
+| Elemento 1 | Elemento 2 | Elemento 3 |
+| Elemento 4 | Elemento 5 | Elemento 6 |
+
+</div>
+</div>
+
+> :bulb: **Tip:** Con **`Ctrl + K + D`** puedes hacer que la tabla se alienee correctamente.
+
+<div style="page-break-after:always;"></div>
+
+### Enlaces
+
+1. Enlace normal por ejemplo a [Goole](http://www.google.com):
+
+    ```markdown
+    [Goole](http://www.google.com)
+    ```
+
+2. Enlace **negrita** por ejemplo a **[Goole](http://www.google.com)**:
+
+    ```markdown
+    **[Goole](http://www.google.com)**
+    ```
+
+3. Referencia directa <http://www.google.com>
+
+    ```markdown
+    <http://www.google.com>
+    ```
+
+### Imágenes
+
+!!! Tip Tip
+    Si usas VSCode y arrastras el archivo de imagen a la ventana del editor y justo antes de soltarla (drop) pulsas la tecla **`Shift`** te insertará la imagen en el formato correcto para Markdown.
+
+#### Estándar imágenes básico
+
+```markdown
+![Texto alternativo](assets/imagenes/imagen.png)
+![Texto alternativo](assets/imagenes/imagen.png "título alternativo al pasar el ratón")
+![Texto alternativo](assets/imagenes/imagen.png){ width=200 }
+![Texto alternativo](assets/imagenes/imagen.png){ height=100 }
+```
+
+Por ejemplo:
+
+```markdown
+![Texto alternativo](assets/imagenes/imagen.png "Gata calico"){ width=300}
+```
+
+![Texto alternativo](assets/imagenes/imagen.png "Gata calico"){ width=300}
+
+#### Ampliación imágenes
+
+Un poco más vistosas, las tienes definidas como fragmentos de código con **`mde_imagenCentrada`** que generará lo siguiente, donde controlamos el tamaño de la imagen y al tener el margen automático, se centra la imagen en la página.
+
+```markdown
+![nombre](assets/imagenes/imagen.png){ style="display:block; margin:0 auto; width:75%;max-width:300px;" }
+```
+
+![nombre](assets/imagenes/imagen.png){ style="display:block; margin:0 auto; width:75%;max-width:300px;" }
 
 ### Elementos especiales
 
@@ -113,19 +409,11 @@ $$f(x) = x^2+3$$
 
 Código indicando el lenguaje a renderizar:
 
-```txt
-    ```csharp
-    string AYUDA = "csharp{.line-numbers} para numerar las líneas." +
-                "csharp{highlight=2} para resaltar la línea 2" +
-                "csharp{highlight=[2,5-7]} para resaltar la 2 y de la 5 a la 7" +
-                "csharp{highlight=1; .line-numbers} para hacer ambas cosas";
-    ```
-```
 ```csharp
-    string AYUDA = "csharp{.line-numbers} para numerar las líneas." +
-                "csharp{highlight=2} para resaltar la línea 2" +
-                "csharp{highlight=[2,5-7]} para resaltar la 2 y de la 5 a la 7" +
-                "csharp{highlight=1; .line-numbers} para hacer ambas cosas";
+string AYUDA = "csharp{.line-numbers} para numerar las líneas." +
+            "csharp{highlight=2} para resaltar la línea 2" +
+            "csharp{highlight=[2,5-7]} para resaltar la 2 y de la 5 a la 7" +
+            "csharp{highlight=1; .line-numbers} para hacer ambas cosas";
 ```
 
 Diagramas de Graphviz, PlantUML, Mermaid, etc.
@@ -387,3 +675,25 @@ scale 0.6
 </div>
 
 Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+
+
+<div style="page-break-after:always;"></div>
+
+## Conclusiones
+
+### Vantajas :+1: 
+
+* :heavy_check_mark: **Ideal para trabajo en equipo** o en grupo.
+* :heavy_check_mark: Homogeneidad en la generación de contenido.
+* :heavy_check_mark: Historial y revisión de cambios integrado.
+* :heavy_check_mark: **Automatización** en la generación de documentos y despliegue.
+* :heavy_check_mark: Permite bifurcaciones.
+* :heavy_check_mark: Permite familiarizarse con tecnologías como MarkDown y Git (GitHub) para después aplicarlas con los alumnos en proyectos de grupo o transversales.
+
+### Desventajas :-1: 
+
+* :x: Hacer maquetaciones complejas es '*costoso*'.
+* :x: Requiere del manejo de varias herramientas y tecnologías.
+* :x: Requiere de una estructura inicial '*compleja*'.
+* :x: Tiene poco sentido si no se va a generar documentación técnica o se va a trabajar de forma individualizada.
+* :x: Documentación '*pobre*' ne ocasiones.
