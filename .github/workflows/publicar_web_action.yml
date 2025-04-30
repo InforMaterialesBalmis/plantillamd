@@ -13,10 +13,19 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Upload PDF to Google Drive
+      - name: Upload manual_generar_contenido to Google Drive
         uses: adityak74/google-drive-upload-git-action@main
         with:
-            filename: "ejemplos/manual.pdf"
+            filename: "documentacion/manual_generar_contenido.pdf"
             credentials: ${{ secrets.GDRIVE_CREDENTIALS }}
             folderId: ${{ secrets.GDRIVE_FOLDER_ID }}
             overwrite: "true"
+
+      - name: Upload manual_crear_repositorio to Google Drive
+        uses: adityak74/google-drive-upload-git-action@main
+        with:
+            filename: "documentacion/manual_crear_repositorio.pdf"
+            credentials: ${{ secrets.GDRIVE_CREDENTIALS }}
+            folderId: ${{ secrets.GDRIVE_FOLDER_ID }}
+            overwrite: "true"
+    

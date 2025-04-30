@@ -1,6 +1,6 @@
 ---
 title:
-    UD1 Título Reducido
+    Manual Para Generar Contenido
 date: 16/06/2021
 export_on_save:
     puppeteer: true
@@ -32,21 +32,28 @@ toc:
     ordered: false
 ---
 
-# Apuntes {ignore=true}
+# Manual :construction_worker: ==EN CONSTRUCCIÓN==  :construction:{ignore=true}
 
-[Descargar estos apuntes](./manual.pdf)
+
+[Descargar estos apuntes](./manual_generar_contenido.pdf)
 
 ## Índice {ignore=true}
 
 [TOC]
 
-<div style=\"page-break-after:always;\"></div>
+<div style="page-break-after:always;"></div>
 
 ## Pre-Requisitos
 
 1. Tener una **cuenta de GitHub**.
 2. Tener instalado **Google Chrome** en el equipo.
-3. Tener instalado **[Git](https://git-scm.com/download/win)** en local.
+3. Tener instalado **[Git](https://git-scm.com/download/win)** en local. **Si es la primera vez que trabajas con git**, deberás configurar tu nombre y correo electrónico. Para ello, puedes usar el siguiente comando en la terminal de Windows o Git Bash:
+
+   ```cmd
+   C:\materiales> git config --global user.name "Nombre Apellido"
+   C:\materiales> git config --global user.email "cuenta@iesdoctorbalmis.com"
+   ```
+
 4. Tener el Java Runtime instalado mínimo la versión 17.
 5. Tener instalado **[Visual Studio Code](https://code.visualstudio.com/)**- Puedes descargar la versión portable ya preparada de **[GDrive](https://drive.google.com/drive/u/0/folders/1LaryOjKFO4osOZkenHwuBcZ4U7rH1Gan)** en la carpeta del Departamento.
 
@@ -106,39 +113,7 @@ Se ha creado una cuenta de GitHub para el departamento de informática del IES D
 
 Tendremos 2 opciones:
 
-1. Trabajar en algún proyecto ya existente en las organizaciones de GitHub para lo cual deberemos simplemente clonarlo. (Busca en Google cómo clonar un repositorio de GitHub).
-
-2. (**Propuesta**) Partir de la plantilla de trabajo que se ha creado para el departamento. Para ello, deberemos seguir los siguientes pasos:
-
-    1. **Si es la primera vez que trabajas con git**, deberás configurar tu nombre y correo electrónico. Para ello, puedes usar el siguiente comando en la terminal de Windows o Git Bash:
-
-        ```cmd
-        C:\materiales> git config --global user.name "Nombre Apellido"
-        C:\materiales> git config --global user.email "cuenta@iesdoctorbalmis.com"
-        ```
-
-    2. En el siguiente **[repositorio público de GitHub](https://github.com/InforMaterialesBalmis/plantillamd)**, debes clonar el repositorio en tu equipo local. Pude que te pida autenticación de acceso a GitHub por lo que te aparecerá una atenticación inicial que te generará una credenciales de acceso desde tu equipo local. Para ello, puedes usar el siguiente comando en la terminal de Windows o Git Bash:
-
-        ```cmd
-        C:\materiales> git clone https://github.com/InforMaterialesBalmis/plantillamd.git
-        ```
-
-    3. Una vez clonado el repositorio, debes borrar la carpeta **`.git`** que se ha creado al clonar el repositorio. Para ello, puedes usar el siguiente comando en la terminal de Windows o Git Bash:
-
-        ```cmd
-        C:\materiales> cd plantillamd
-        C:\materiales\plantillamd> del /s /q .git
-        ```
-
-    4. Crea un repositorio en tu cuenta de GitHub y vuelve a inicializar el repositorio en la carpeta clonada. Para ello, puedes usar el siguiente comando en la terminal de Windows o Git Bash:
-
-        ```cmd
-        C:\materiales\plantillamd> git init
-        C:\materiales\plantillamd> git add .
-        C:\materiales\plantillamd> git commit -m "Iniciando Materiales"
-        C:\materiales\plantillamd> git remote add origin <URL_REPOSITORIO_GITHUB>
-        C:\materiales\plantillamd> git push -u origin main
-        ```
+==**TODO: AQUI**==
 
 <div style="page-break-after:always;"></div>
 
