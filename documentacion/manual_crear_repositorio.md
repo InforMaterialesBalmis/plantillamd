@@ -54,7 +54,7 @@ toc:
    ```
 
 4. Tener el Java Runtime instalado mínimo la versión 17.
-5. Tener instalado **[Visual Studio Code](https://code.visualstudio.com/)**- Puedes descargar la versión portable ya preparada de **[GDrive](https://drive.google.com/drive/u/0/folders/1LaryOjKFO4osOZkenHwuBcZ4U7rH1Gan)** en la carpeta del Departamento.
+5. Tener instalado **[Visual Studio Code](https://code.visualstudio.com/)**. Puedes descargar la versión portable ya preparada de **[GDrive](https://drive.google.com/drive/u/0/folders/1LaryOjKFO4osOZkenHwuBcZ4U7rH1Gan)** en la carpeta del Departamento.
 
     Si ya lo tienes instalado puedes crearte un perfil personalizado de "***Apuntes con Markdown***" con las siguientes extensiones:
 
@@ -115,29 +115,42 @@ Partir de la **plantilla** de trabajo que se ha creado para el departamento. Par
 1. En el siguiente **[repositorio público de GitHub](https://github.com/InforMaterialesBalmis/plantillamd)**, debes clonar el repositorio en tu equipo local. Pude que te pida autenticación de acceso a GitHub por lo que te aparecerá una autenticación inicial que te generará una credenciales de acceso desde tu equipo local. Para ello, puedes usar el siguiente comando en la terminal de Windows o Git Bash:
 
    ```cmd
-   C:\> git clone https://github.com/InforMaterialesBalmis/plantillamd.git
-   C:\> ren plantillamd materiales
-   C:\> cd materiales
-   C:\materiales>
+   C:\materiales> git clone https://github.com/InforMaterialesBalmis/plantillamd.git
    ```
 
-2. Una vez clonado el repositorio, debes borrar la carpeta **`.git`** que se ha creado al clonar el repositorio. Para ello, puedes usar el siguiente comando en la terminal de Windows o Git Bash:
+2. Una vez clonado el repositorio, debes entrar en la carpeta **`plantilla`** que habrá creado y borrar la carpeta **`.git`** que se ha creado al clonar el repositorio. Para ello, puedes usar el siguiente comando en la terminal de Windows o Git Bash:
 
    ```cmd
-   C:\materiales> del /s /q .git
+   C:\materiales> cd plantillamd
+   C:\materiales\plantillamd>
+   C:\materiales\plantillamd> del /s /q .git
    ```
 
-3. Crea un repositorio en tu cuenta de GitHub y añádele el fichero **`README.md`** cuando te lo ofrezca en la creación y vuelve a inicializar el repositorio en la carpeta clonada. Para ello, puedes usar el siguiente comando en la terminal de Windows o Git Bash:
+3. Usando la cuenta **`infor.materiales@iesdoctorbalmis.com`** creamos una nueva organización en GitHub. Para ello, desplegamos el menú de la derecha pulsando sobre el avatar y seleccionamos **`Settings`** :one:, en settings seleccionamos **`Organizations`** :two: y pulsamos sobre el botón **`New organization`** :three:. En nuestros ejemplos, hemos creado la organización **balmisdigigs** :four:, pero **puedes poner un nombre identificativo de tu módulo como y nivel**.
 
-   ```cmd
-   C:\materiales> git init
-   C:\materiales> git add .
-   C:\materiales> git commit -m "Iniciando Materiales"
-   C:\materiales> git remote add origin <URL_REPOSITORIO_CREADO_EN_GITHUB>
-   C:\materiales> git push -u origin main
-   ```
+    <div class="row">
+    <div class="col-sm-6 d-flex justify-content-center">
 
-4. Deberemos crear una rama personalizada de trabajo, debería llevar tu nombre en minúsculas por ejemplo **`profesorx`**. Para ìr trabajando en ella, y tener el trabajo separado del resto de compañeros si en el futuro se añaden más colaboradores.
+    ![alt text](assets/imagenes/crear_repositorio/settings.png){height=300}
+
+    </div>
+    <div class="col-sm-6 d-flex justify-content-center">
+
+    ![alt text](assets/imagenes/crear_repositorio/organizacion.png){height=300}
+
+    </div>
+    <div class="col-sm-12 d-flex justify-content-center">
+
+    ![alt text](assets/imagenes/crear_repositorio/new_organization.png){height=300}
+
+    </div>
+    </div>
+
+4. Una vez tenemos la organización creada accedemos a la misma a través de la pantalla anterior y lo primero que revisaremos es los colaboradores (**`People`** :one:) que van a tener acceso a sus repos privados y los permisos que tendrán. 
+
+    ![nombre](assets/imagenes/crear_repositorio/crear_repos.png){ style="display:block;margin:0 auto;width:40%;max-height:300px;" }
+
+5. Deberemos crear una rama personalizada de trabajo, debería llevar tu nombre en minúsculas por ejemplo **`profesorx`**. Para ìr trabajando en ella, y tener el trabajo separado del resto de compañeros si en el futuro se añaden más colaboradores.
 
    ```cmd
    C:\materiales> git branch profesorx
