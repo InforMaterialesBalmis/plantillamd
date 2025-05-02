@@ -190,7 +190,7 @@ code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-fami
     
       <div class="crossnote markdown-preview  ">
       
-<h1 id="manual-construction_worker-en-construcción--construction">Manual 👷 <mark>EN CONSTRUCCIÓN</mark>  🚧 </h1>
+<h1 id="manual-para-crear-el-marco-de-trabajo">Manual para crear el marco de trabajo </h1>
 <p><a href="./manual_crear_repositorio.pdf">Descargar estos apuntes</a></p>
 <h2 id="índice">Índice </h2>
 
@@ -212,11 +212,53 @@ code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-fami
           <a href="#creación-del-workspace" class="md-toc-link">
             <p>Creación del Workspace</p>
 
-          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
-          <a href="#flujo-de-trabajo-y-configuraciones" class="md-toc-link">
-            <p>Flujo de trabajo y configuraciones</p>
+          </a></div><details style="padding:0;;padding-left:0px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#configuración-de-la-publicación" class="md-toc-link"><p>Configuración de la publicación</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#configurar-token-para-desplegar-en-pages" class="md-toc-link">
+            <p>Configurar token para desplegar en Pages</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#configurar-el-secreto-a-usar-em-action-para-desplegar-en-pages" class="md-toc-link">
+            <p>Configurar el secreto a usar em Action para desplegar en Pages</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#configurando-las-acciones-en-github-pages" class="md-toc-link">
+            <p>Configurando las acciones en GitHub Pages</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#decidiendo-que-archivos-publicar" class="md-toc-link">
+            <p>Decidiendo que archivos publicar</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#activando-github-pages" class="md-toc-link">
+            <p>Activando GitHub Pages</p>
 
           </a></div>
+        </div>
+      </details>
+    <details style="padding:0;;padding-left:0px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#workflow-de-trabajo" class="md-toc-link"><p>Workflow de Trabajo</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#trabajo-normal-en-nuestra-rama" class="md-toc-link">
+            <p>Trabajo normal en nuestra rama</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#publicar-en-main-y-desplegar-en-github-pages" class="md-toc-link">
+            <p>Publicar en <strong><code>main</code></strong> y desplegar en GitHub Pages</p>
+
+          </a></div>
+        </div>
+      </details>
+    
 </div>
 <div style="page-break-after:always;"></div>
 <h2 id="pre-requisitos">Pre-Requisitos </h2>
@@ -257,7 +299,7 @@ C:\materiales&gt; git config --global user.email "cuenta@iesdoctorbalmis.com"
 <p>En la capeta <strong><code>[data]</code></strong> está la configuración local del usuario de VSCode, en la carpeta <strong><code>[extensions]</code></strong> están las extensiones instaladas y en la carpeta descritas en el punto anterior y en la carpeta <strong><code>[user-data]</code></strong> está la configuración global del usuario de VSCode como pueden ser los snippets, temas, configuraciones de usuario, etc.</p>
 </div>
 <div class="col-sm-5">
-<p align="center" class="puml"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentstyletype="text/css" data-diagram-type="SALT" height="140.4px" preserveAspectRatio="none" style="width:284px;height:140px;background:#FFFFFF;" version="1.1" viewBox="0 0 284 140" width="284.4px" zoomAndPan="magnify"><defs></defs><g><path d="M20.4,12.1125 L20.4,13.3125 L30,13.3125 L30,12.1125 L20.4,12.1125 M20.4,14.5125 L20.4,21.6045 C20.4,21.6645 20.448,21.7125 20.508,21.7125 L29.88,21.7125 C29.94,21.7125 29.988,21.6645 29.988,21.6045 L29.988,14.5125 L26.424,14.5125 L26.424,15.7485 L23.988,15.7485 L23.988,14.5125 L20.388,14.5125" fill="#000000"></path><text fill="#000000" font-family="sans-serif" font-size="14.4" lengthAdjust="spacing" textLength="244.8984" x="31.2" y="22.1484">[VSCode-win32-x64-X.X.X-markdown]</text><text fill="#000000" font-family="sans-serif" font-size="14.4" lengthAdjust="spacing" textLength="12.0023" x="31.2" y="40.2609">...</text><path d="M32.4,48.3375 L32.4,49.5375 L42,49.5375 L42,48.3375 L32.4,48.3375 M32.4,50.7375 L32.4,57.8295 C32.4,57.8895 32.448,57.9375 32.508,57.9375 L41.88,57.9375 C41.94,57.9375 41.988,57.8895 41.988,57.8295 L41.988,50.7375 L38.424,50.7375 L38.424,51.9735 L35.988,51.9735 L35.988,50.7375 L32.388,50.7375" fill="#000000"></path><text fill="#000000" font-family="sans-serif" font-size="14.4" font-weight="bold" lengthAdjust="spacing" textLength="39.1992" x="43.2" y="58.3734">[data]</text><path d="M44.4,66.45 L44.4,67.65 L54,67.65 L54,66.45 L44.4,66.45 M44.4,68.85 L44.4,75.942 C44.4,76.002 44.448,76.05 44.508,76.05 L53.88,76.05 C53.94,76.05 53.988,76.002 53.988,75.942 L53.988,68.85 L50.424,68.85 L50.424,70.086 L47.988,70.086 L47.988,68.85 L44.388,68.85" fill="#000000"></path><text fill="#000000" font-family="sans-serif" font-size="14.4" lengthAdjust="spacing" textLength="68.8359" x="55.2" y="76.4859">[user-data]</text><path d="M44.4,84.5625 L44.4,85.7625 L54,85.7625 L54,84.5625 L44.4,84.5625 M44.4,86.9625 L44.4,94.0545 C44.4,94.1145 44.448,94.1625 44.508,94.1625 L53.88,94.1625 C53.94,94.1625 53.988,94.1145 53.988,94.0545 L53.988,86.9625 L50.424,86.9625 L50.424,88.1985 L47.988,88.1985 L47.988,86.9625 L44.388,86.9625" fill="#000000"></path><text fill="#000000" font-family="sans-serif" font-size="14.4" lengthAdjust="spacing" textLength="76.8445" x="55.2" y="94.5984">[extensions]</text><path d="M32.4,102.675 L32.4,103.875 L42,103.875 L42,102.675 L32.4,102.675 M32.4,105.075 L32.4,112.167 C32.4,112.227 32.448,112.275 32.508,112.275 L41.88,112.275 C41.94,112.275 41.988,112.227 41.988,112.167 L41.988,105.075 L38.424,105.075 L38.424,106.311 L35.988,106.311 L35.988,105.075 L32.388,105.075" fill="#000000"></path><text fill="#000000" font-family="sans-serif" font-size="14.4" font-weight="bold" lengthAdjust="spacing" textLength="27.2039" x="43.2" y="112.7109">[jar]</text><text fill="#000000" font-family="sans-serif" font-size="14.4" lengthAdjust="spacing" textLength="155.2641" x="43.2" y="130.8234">plantuml-gplv2-X.X.X.jar</text><rect fill="none" height="2.4" style="stroke:#888888;stroke-width:1.2;" width="2.4" x="10.8" y="15.0562"></rect><line style="stroke:#888888;stroke-width:1.2;" x1="12" x2="12" y1="18.6563" y2="34.3688"></line><line style="stroke:#888888;stroke-width:1.2;" x1="12" x2="21.6" y1="34.3688" y2="34.3688"></line><rect fill="none" height="2.4" style="stroke:#888888;stroke-width:1.2;" width="2.4" x="22.8" y="51.2813"></rect><line style="stroke:#888888;stroke-width:1.2;" x1="12" x2="12" y1="18.6563" y2="52.4812"></line><line style="stroke:#888888;stroke-width:1.2;" x1="12" x2="21.6" y1="52.4812" y2="52.4812"></line><line style="stroke:#888888;stroke-width:1.2;" x1="24" x2="24" y1="54.8813" y2="70.5938"></line><line style="stroke:#888888;stroke-width:1.2;" x1="24" x2="33.6" y1="70.5938" y2="70.5938"></line><line style="stroke:#888888;stroke-width:1.2;" x1="24" x2="24" y1="54.8813" y2="88.7063"></line><line style="stroke:#888888;stroke-width:1.2;" x1="24" x2="33.6" y1="88.7063" y2="88.7063"></line><rect fill="none" height="2.4" style="stroke:#888888;stroke-width:1.2;" width="2.4" x="22.8" y="105.6187"></rect><line style="stroke:#888888;stroke-width:1.2;" x1="12" x2="12" y1="18.6563" y2="106.8188"></line><line style="stroke:#888888;stroke-width:1.2;" x1="12" x2="21.6" y1="106.8188" y2="106.8188"></line><line style="stroke:#888888;stroke-width:1.2;" x1="24" x2="24" y1="109.2188" y2="124.9312"></line><line style="stroke:#888888;stroke-width:1.2;" x1="24" x2="33.6" y1="124.9312" y2="124.9312"></line><!--SRC=[PP3TJi9048NlzodcoaX9Dr04IMCC4T2aGYIs41F3nKB7PhNT9VjJC8HtTrj0ZUvSx6JEcIypCz26AQDPRaYyPZb2cmO4o9w0U_ka_ffmSx6IkzlNHJoKAVfRBZg1l-jT-I_KXLymzP7AhLWUtKsWb9vJpplrfiomfUUTwjz8gr7vjVPNmPr1eRaKUlaFzixKRzOcPyBO8lUpJLu6nwceyzI60pcG0Ogqtf7CAkjyEe4ILGMlzcq5NHfS9XOXOW9Qrz3kXvrksEd1S9n09JV8vSDiKWQWfLLhX9Hhe_ZA6aTea8YL39wjCBp049usAABHuxa0Or5o9KM1mf1eCVqnkFlTSGCnAZSBBAPaX6_CviPrh6NAHHR2FBdt-sJ2H6PPvjYeoL0whleCOHn_0G00]--></g></svg></p></div>
+<p align="center" class="puml"><!--?xml version="1.0" encoding="us-ascii" standalone="no"?--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentstyletype="text/css" height="140.4px" preserveAspectRatio="none" style="width:284px;height:140px;background:#FFFFFF;" version="1.1" viewBox="0 0 284 140" width="284.4px" zoomAndPan="magnify"><defs></defs><g><path d="M20.4,12.1125 L20.4,13.3125 L30,13.3125 L30,12.1125 L20.4,12.1125 M20.4,14.5125 L20.4,21.6045 C20.4,21.6645 20.448,21.7125 20.508,21.7125 L29.88,21.7125 C29.94,21.7125 29.988,21.6645 29.988,21.6045 L29.988,14.5125 L26.424,14.5125 L26.424,15.7485 L23.988,15.7485 L23.988,14.5125 L20.388,14.5125 " fill="#000000" style="stroke:;stroke-width:0.0;stroke-dasharray:;"></path><text fill="#000000" font-family="sans-serif" font-size="14.4" lengthAdjust="spacing" textLength="244.8" x="31.2" y="22.1484">[VSCode-win32-x64-X.X.X-markdown]</text><text fill="#000000" font-family="sans-serif" font-size="14.4" lengthAdjust="spacing" textLength="10.8" x="31.2" y="40.2609">...</text><path d="M32.4,48.3375 L32.4,49.5375 L42,49.5375 L42,48.3375 L32.4,48.3375 M32.4,50.7375 L32.4,57.8295 C32.4,57.8895 32.448,57.9375 32.508,57.9375 L41.88,57.9375 C41.94,57.9375 41.988,57.8895 41.988,57.8295 L41.988,50.7375 L38.424,50.7375 L38.424,51.9735 L35.988,51.9735 L35.988,50.7375 L32.388,50.7375 " fill="#000000" style="stroke:;stroke-width:0.0;stroke-dasharray:;"></path><text fill="#000000" font-family="sans-serif" font-size="14.4" font-weight="bold" lengthAdjust="spacing" textLength="39.6" x="43.2" y="58.3734">[data]</text><path d="M44.4,66.45 L44.4,67.65 L54,67.65 L54,66.45 L44.4,66.45 M44.4,68.85 L44.4,75.942 C44.4,76.002 44.448,76.05 44.508,76.05 L53.88,76.05 C53.94,76.05 53.988,76.002 53.988,75.942 L53.988,68.85 L50.424,68.85 L50.424,70.086 L47.988,70.086 L47.988,68.85 L44.388,68.85 " fill="#000000" style="stroke:;stroke-width:0.0;stroke-dasharray:;"></path><text fill="#000000" font-family="sans-serif" font-size="14.4" lengthAdjust="spacing" textLength="70.8" x="55.2" y="76.4859">[user-data]</text><path d="M44.4,84.5625 L44.4,85.7625 L54,85.7625 L54,84.5625 L44.4,84.5625 M44.4,86.9625 L44.4,94.0545 C44.4,94.1145 44.448,94.1625 44.508,94.1625 L53.88,94.1625 C53.94,94.1625 53.988,94.1145 53.988,94.0545 L53.988,86.9625 L50.424,86.9625 L50.424,88.1985 L47.988,88.1985 L47.988,86.9625 L44.388,86.9625 " fill="#000000" style="stroke:;stroke-width:0.0;stroke-dasharray:;"></path><text fill="#000000" font-family="sans-serif" font-size="14.4" lengthAdjust="spacing" textLength="79.2" x="55.2" y="94.5984">[extensions]</text><path d="M32.4,102.675 L32.4,103.875 L42,103.875 L42,102.675 L32.4,102.675 M32.4,105.075 L32.4,112.167 C32.4,112.227 32.448,112.275 32.508,112.275 L41.88,112.275 C41.94,112.275 41.988,112.227 41.988,112.167 L41.988,105.075 L38.424,105.075 L38.424,106.311 L35.988,106.311 L35.988,105.075 L32.388,105.075 " fill="#000000" style="stroke:;stroke-width:0.0;stroke-dasharray:;"></path><text fill="#000000" font-family="sans-serif" font-size="14.4" font-weight="bold" lengthAdjust="spacing" textLength="27.6" x="43.2" y="112.7109">[jar]</text><text fill="#000000" font-family="sans-serif" font-size="14.4" lengthAdjust="spacing" textLength="154.8" x="43.2" y="130.8234">plantuml-gplv2-X.X.X.jar</text><rect fill="none" height="2.4" style="stroke:#888888;stroke-width:1.2;" width="2.4" x="10.8" y="15.0562"></rect><line style="stroke:#888888;stroke-width:1.2;" x1="12" x2="12" y1="18.6563" y2="34.3688"></line><line style="stroke:#888888;stroke-width:1.2;" x1="12" x2="21.6" y1="34.3688" y2="34.3688"></line><rect fill="none" height="2.4" style="stroke:#888888;stroke-width:1.2;" width="2.4" x="22.8" y="51.2813"></rect><line style="stroke:#888888;stroke-width:1.2;" x1="12" x2="12" y1="18.6563" y2="52.4812"></line><line style="stroke:#888888;stroke-width:1.2;" x1="12" x2="21.6" y1="52.4812" y2="52.4812"></line><line style="stroke:#888888;stroke-width:1.2;" x1="24" x2="24" y1="54.8813" y2="70.5938"></line><line style="stroke:#888888;stroke-width:1.2;" x1="24" x2="33.6" y1="70.5938" y2="70.5938"></line><line style="stroke:#888888;stroke-width:1.2;" x1="24" x2="24" y1="54.8813" y2="88.7063"></line><line style="stroke:#888888;stroke-width:1.2;" x1="24" x2="33.6" y1="88.7063" y2="88.7063"></line><rect fill="none" height="2.4" style="stroke:#888888;stroke-width:1.2;" width="2.4" x="22.8" y="105.6187"></rect><line style="stroke:#888888;stroke-width:1.2;" x1="12" x2="12" y1="18.6563" y2="106.8188"></line><line style="stroke:#888888;stroke-width:1.2;" x1="12" x2="21.6" y1="106.8188" y2="106.8188"></line><line style="stroke:#888888;stroke-width:1.2;" x1="24" x2="24" y1="109.2188" y2="124.9312"></line><line style="stroke:#888888;stroke-width:1.2;" x1="24" x2="33.6" y1="124.9312" y2="124.9312"></line><!--SRC=[PP1TJy8m58Rl-olEbO6HBcEWCOinH3vC429nWvWOBWexpkhMaduC3E6_smrGe-r5Jyxxla_EQKyRfenckI7nckK8RJyaGFO4tDadzTE2cukLtDs-BEA-J95kkUY4T7VLfS- -kxHWwYELMx4ykblW-_wvzBnJDcM6BJtlrFz6MesArjfV1NS6XUPIwEK_s3jJlrcRd0bZYvnccxmCZrFvpbCR3kH0UYZIUaSogwppwGHAL1MysZS8ktwdaRnP6E4AsfSG1b4tY89Bw0yJgEGcQTpF9g2bLMk4b6kZ-CeQbs-ICIiPF5bXU84HF6vGZ0SFvmOCHScL50KAGyQBwO_1_TuTDn2ZSfF0Oae6-CfiRbnYBLCkiWZcoOXUamaJcMMPOwCcVUcuwZE2OVm5]--></g></svg></p></div>
 </div>
 <p>En la carpeta <strong><code>[jar]</code></strong> está el ejecutable de PlantUML que markdown-preview-enhanced utiliza para renderizar los diagramas, ya está preconfigurado en la instalación portable, pero para funcionar necesitarás tener el JRE de Java instalado como se comentaba anteriormente.</p>
 <div style="page-break-after:always;"></div>
@@ -272,7 +314,9 @@ C:\materiales&gt; git config --global user.email "cuenta@iesdoctorbalmis.com"
 <li>
 <p>En el siguiente <strong><a href="https://github.com/InforMaterialesBalmis/plantillamd">repositorio público de GitHub</a></strong>, debes clonar el repositorio en tu equipo local. Pude que te pida autenticación de acceso a GitHub por lo que te aparecerá una autenticación inicial que te generará una credenciales de acceso desde tu equipo local. Para ello, puedes usar el siguiente comando en la terminal de Windows o Git Bash:</p>
 <pre data-role="codeBlock" data-info="cmd" class="language-cmd cmd"><code>C:\materiales&gt; git clone https://github.com/InforMaterialesBalmis/plantillamd.git
-</code></pre></li>
+</code></pre><p>Si no sabes obtener la URL del repositorio para usarla con el comando <strong><code>clone</code></strong>, puedes hacerlo desde el botón <strong><code>Code</code></strong> 1️⃣ y al desplegar te aparecerá la URL que debes copiar con el botón de <strong><code>Copy to Clipboard</code></strong> 2️⃣. Así para cualquier repositorio que quieras clonar.</p>
+<p><img src="assets/imagenes/crear_repositorio/clonar.png" alt="nombre" style="display:block;margin:0 auto;max-width:600px;"></p>
+</li>
 <li>
 <p>Una vez clonado el repositorio, debes entrar en la carpeta <strong><code>plantilla</code></strong> que habrá creado y borrar la carpeta <strong><code>.git</code></strong> que se ha creado al clonar el repositorio. Para ello, puedes usar el siguiente comando en la terminal de Windows o Git Bash:</p>
 <pre data-role="codeBlock" data-info="cmd" class="language-cmd cmd"><code>C:\materiales&gt; cd plantillamd
@@ -294,73 +338,121 @@ C:\materiales\plantillamd&gt; del /s /q .git
  </div>
 </li>
 <li>
-<p>Una vez tenemos la organización creada accedemos a la misma a través de la pantalla anterior y lo primero que revisaremos es los colaboradores (<strong><code>People</code></strong> 1️⃣) que van a tener acceso a sus repos privados y los permisos que tendrán.</p>
-<p><img src="assets/imagenes/crear_repositorio/crear_repos.png" alt="nombre" style="display:block;margin:0 auto;width:40%;max-height:300px;"></p>
+<p>Una vez tenemos la organización creada accedemos a la misma a través de la pantalla anterior y lo primero que revisaremos es los colaboradores (<strong><code>People</code></strong> 1️⃣) que van a tener acceso a sus repos privados y los permisos que tendrán. Posteriormente, vamos a la pestaña de <strong><code>Repositories</code></strong> 2️⃣ y pulsamos sobre el botón **<code>New Repository</code>**para crear un nuevo repositorio.</p>
+<ul>
+<li>3️⃣ Creamos un repositorio <strong>privado</strong> con un archivo <strong><code>README.md</code></strong> para que así tenga un primer commit y llámalo con un nombre indicativo de tus materiales. En nuestro ejemplo le hemos llamado <strong><code>digitalizacion</code></strong>.</li>
+<li>4️⃣ Creamos un repositorio <strong>público</strong> para el despliegue de nuestro contenido en GitHub Pages. En nuestro ejemplo le hemos llamado <strong><code>digitalizacion.github.io</code></strong>.
+<blockquote>
+<p>📌 <strong>Nota</strong>: Posteriomente volveremos a él para configurar la publicación en <strong>GitHub Pages</strong>.</p>
+</blockquote>
+</li>
+</ul>
+<p><img src="assets/imagenes/crear_repositorio/crear_repos.png" alt="nombre" style="display:block;margin:0 auto;max-width:600px;"></p>
 </li>
 <li>
-<p>Deberemos crear una rama personalizada de trabajo, debería llevar tu nombre en minúsculas por ejemplo <strong><code>profesorx</code></strong>. Para ìr trabajando en ella, y tener el trabajo separado del resto de compañeros si en el futuro se añaden más colaboradores.</p>
-<pre data-role="codeBlock" data-info="cmd" class="language-cmd cmd"><code>C:\materiales&gt; git branch profesorx
-C:\materiales&gt; git checkout profesorx
-C:\materiales&gt; git push -u origin profesorx
+<p>Vamos a pasar los contenidos de la plantilla al repositorio que acabamos de crear, para ello volvemos a la carpeta <strong><code>C:\materiales</code></strong> en el CMD y clonamos el repositorio privado que hemos creado en la organización seguimos los siguientes pasos que puedes ver en el ejemplo:</p>
+<ol>
+<li>
+<p>Lo clonamos en la carpeta <strong><code>C:\materiales</code></strong>.</p>
+<pre data-role="codeBlock" data-info="cmd" class="language-cmd cmd"><code>C:\materiales&gt; git clone https://github.com/balmisdigigs/digitalizacion.git
+</code></pre></li>
+<li>
+<p>Entramos en la carpeta del repositorio clonado <strong><code>digitalizacion</code></strong>, copiamos el contenido de la <strong><code>plantillamd</code></strong> a la carpeta del repositorio clonado y por último borramos la carpeta <strong><code>plantillamd</code></strong> que hemos clonado inicialmente. Para ello, puedes usar los siguientes comandos en la terminal de Windows...</p>
+<pre data-role="codeBlock" data-info="cmd" class="language-cmd cmd"><code>C:\materiales&gt; cd digitalizacion
+C:\materiales\digitalizacion&gt; copy /s /q ..\plantillamd\* .
+C:\materiales\digitalizacion&gt; del /s /q ..\plantillamd
+</code></pre></li>
+<li>
+<p>Hacemos un primer commit con el contenido de la plantilla y lo subimos a GitHub. Para ello, puedes usar los siguientes comandos en la terminal de Windows...</p>
+<pre data-role="codeBlock" data-info="cmd" class="language-cmd cmd"><code>C:\materiales\digitalizacion&gt; git add .
+C:\materiales\digitalizacion&gt; git commit -m "Primer commit con la plantilla"
+C:\materiales\digitalizacion&gt; git push
+</code></pre></li>
+<li>
+<p>Creamos una rama con nuestro nombre y la subimos a GitHub. Para ello, puedes usar los siguientes comandos en la terminal de Windows...</p>
+<pre data-role="codeBlock" data-info="cmd" class="language-cmd cmd"><code>C:\materiales\digitalizacion&gt; git branch profesorx
+C:\materiales\digitalizacion&gt; git checkout profesorx
+C:\materiales\digitalizacion&gt; git push -u origin profesorx
 </code></pre></li>
 </ol>
+</li>
+</ol>
 <div style="page-break-after:always;"></div>
-<h2 id="flujo-de-trabajo-y-configuraciones">Flujo de trabajo y configuraciones </h2>
-<ol>
+<h2 id="configuración-de-la-publicación">Configuración de la publicación </h2>
+<h3 id="configurar-token-para-desplegar-en-pages">Configurar token para desplegar en Pages </h3>
+<p><img src="assets/imagenes/crear_repositorio/generar_token.png" alt="nombre" style="display:block;margin:0 auto;max-width:600px;"></p>
+<ul>
 <li>
-<p>Trabajar en una rama con nuestro nombre y asegurarnos que trabajamos en ella.</p>
+<p>1️⃣ Como hicimos al principio, saliendo de cualquier organización, vamos a la <strong><code>configuración</code></strong> (<strong><code>Settings</code></strong>) de nuestra cuenta y vamos a la sección de <strong><code>Developer settings</code></strong> que es la última del menú de la izquierda.</p>
 </li>
 <li>
-<p>(Opcional) Arrastrar el issue a la columna In Progress del Kanban.</p>
+<p>2️⃣ En la sección de <strong><code>Personal access tokens</code></strong> pulsamos sobre el botón <strong><code>Tokens (classic)</code></strong>.</p>
 </li>
 <li>
-<p>Al finalizar la sesión:</p>
-<pre data-role="codeBlock" data-info="cmd" class="language-cmd cmd"><code>git add . 
-git commit -m "mensaje"
-git push
-</code></pre></li>
+<p>3️⃣ Pulsamos sobre el botón <strong><code>Generate new token</code></strong> y rellenamos los siguientes campos:</p>
+<ul>
 <li>
-<p>Aquí puedo volver al punto 2 y seguir trabajando en el issue.</p>
+<p><strong><code>Note</code></strong>: Nombre del token, por ejemplo <strong><code>DEPLOY_GH_KEY</code></strong> (Deploy GitHub Key).</p>
 </li>
 <li>
-<p>Al finalizar mi trabajo, inicio el proceso de Revisión/Integración.</p>
-<ol>
+<p><strong><code>Expiration</code></strong>: Seleccionamos <strong>No expiration</strong> para que no caduque nunca.</p>
+</li>
 <li>
-<p>Ejecutar este Wroflow (está en <strong><code>posible_workflow_github.cmd</code></strong>).</p>
-<pre data-role="codeBlock" data-info="cmd" class="language-cmd cmd"><code>git fetch origin
-git merge origin/main
-git push
-
-git checkout main
-git merge MI_RAMA
-git push
-git checkout MI_RAMA
-</code></pre></li>
+<p><strong><code>Select scopes</code></strong>: Marcamos las siguientes opciones:</p>
+<ul>
+<li><strong>repo</strong> (Full control of private repositories)</li>
+<li><strong>workflow</strong> (Update GitHub Action workflow files)</li>
+</ul>
+<p>Nada más generarlo, <strong>lo copiaremos y lo guardaremos en un lugar seguro</strong>, ya que no podremos volver a verlo. Si lo perdemos tendremos que borrar el token y crear uno nuevo.</p>
+</li>
+</ul>
+</li>
 <li>
-<p>Una vez se ejecute el push en la rama main de GitHub se desencadenan las siguientes acciones en <strong><code>.github\workflows\publicar_web_action.yaml</code></strong></p>
-<pre data-role="codeBlock" data-info="yaml" class="language-yaml yaml"><code><span class="token comment"># Al hacerse Push en master</span>
+<p>4️⃣ Tras crearlo y copiarlo nos aparecerá en la lista de tokens creados con el nombre que le dimos.</p>
+</li>
+</ul>
+<h3 id="configurar-el-secreto-a-usar-em-action-para-desplegar-en-pages">Configurar el secreto a usar em Action para desplegar en Pages </h3>
+<p><img src="assets/imagenes/crear_repositorio/new_secret.png" alt="nombre" style="display:block;margin:0 auto;max-width:600px;"></p>
+<ul>
+<li>1️⃣ Volvemos a la organización y el repositorio privado (<strong><code>digitalizacion</code></strong> en el ejemplo) que hemos creado para nuestros materiales.</li>
+<li>2️⃣ Vamos a la pestaña de <strong><code>Settings</code></strong> del repositorio.</li>
+<li>3️⃣ En el menú de la izquierda, en la sección de <strong><code>Secrets and variables</code></strong> pulsamos sobre <strong><code>Actions</code></strong>.</li>
+<li>4️⃣ Vamos a la pstaña <strong><code>Secrets</code></strong> y pulsamos sobre el botón <strong><code>New repository secret</code></strong>.</li>
+<li>5️⃣ Rellenamos los siguientes campos:
+<ul>
+<li><strong><code>Name</code></strong>: Nombre del secreto, por ejemplo <strong><code>DEPLOY_GH_KEY</code></strong> (Deploy GitHub Key).</li>
+<li><strong><code>Secret</code></strong>: Pegamos el token que hemos copiado anteriormente y que generamos en el punto anterior.<br>
+Tras guardarlo no deberá aparecer en la lista de secretos creados con el nombre que le dimos.</li>
+</ul>
+</li>
+</ul>
+<div style="page-break-after:always;"></div>
+<h3 id="configurando-las-acciones-en-github-pages">Configurando las acciones en GitHub Pages </h3>
+<div class="row">
+<div class="col-sm-7 my-auto">
+<p>Si abrimos la carpeta con nuestro workspace <strong><code>digitalizacion</code></strong>, en VSCode, veremos la estructura de carpetas y archivos del esquema. En ella, está resaltada la carpeta <strong><code>.github/workflows/</code></strong>. En ella definiremos el fichero YAML con las acciones (<strong><a href="https://docs.github.com/en/actions">Actions</a></strong>) de despliegue a ser tenidos en cuenta por GitHub. Nosotros, en el caso de la plantilla, ya está creado el fichero <strong><code>publicar_web_action.yml</code></strong> y cuyo contenido será reemplazado por el siguiente:</p>
+</div>
+<div class="col-sm-5 my-auto">
+<p align="center" class="puml"><!--?xml version="1.0" encoding="us-ascii" standalone="no"?--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentstyletype="text/css" height="198px" preserveAspectRatio="none" style="width:185px;height:198px;background:#FFFFFF;" version="1.1" viewBox="0 0 185 198" width="185px" zoomAndPan="magnify"><defs></defs><g><rect fill="#EEEEEE" height="18.0938" style="stroke:#000000;stroke-width:1.0;" width="127" x="6" y="6"></rect><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="71" x="8" y="20.457">digitalizacion</text><line style="stroke:#000000;stroke-width:1.0;" x1="122" x2="122" y1="6" y2="24.0938"></line><polygon fill="#000000" points="125,12,131,12,128,19.0938" style="stroke:#000000;stroke-width:1.0;"></polygon><path d="M17,31.1875 L17,32.1875 L25,32.1875 L25,31.1875 L17,31.1875 M17,33.1875 L17,39.0975 C17,39.1475 17.04,39.1875 17.09,39.1875 L24.9,39.1875 C24.95,39.1875 24.99,39.1475 24.99,39.0975 L24.99,33.1875 L22.02,33.1875 L22.02,34.2175 L19.99,34.2175 L19.99,33.1875 L16.99,33.1875 " fill="#000000" style="stroke:;stroke-width:0.0;stroke-dasharray:;"></path><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="64" x="26" y="39.5508">[.crossnote]</text><path d="M17,46.2813 L17,47.2813 L25,47.2813 L25,46.2813 L17,46.2813 M17,48.2813 L17,54.1913 C17,54.2413 17.04,54.2813 17.09,54.2813 L24.9,54.2813 C24.95,54.2813 24.99,54.2413 24.99,54.1913 L24.99,48.2813 L22.02,48.2813 L22.02,49.3113 L19.99,49.3113 L19.99,48.2813 L16.99,48.2813 " fill="#000000" style="stroke:;stroke-width:0.0;stroke-dasharray:;"></path><text fill="#000000" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="46" x="26" y="54.6445">[.github]</text><path d="M27,61.375 L27,62.375 L35,62.375 L35,61.375 L27,61.375 M27,63.375 L27,69.285 C27,69.335 27.04,69.375 27.09,69.375 L34.9,69.375 C34.95,69.375 34.99,69.335 34.99,69.285 L34.99,63.375 L32.02,63.375 L32.02,64.405 L29.99,64.405 L29.99,63.375 L26.99,63.375 " fill="#000000" style="stroke:;stroke-width:0.0;stroke-dasharray:;"></path><text fill="#000000" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="68" x="36" y="69.7383">[workflows]</text><text fill="#0000FF" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="142" x="36" y="84.832">publicar_web_action.yml</text><path d="M17,91.5625 L17,92.5625 L25,92.5625 L25,91.5625 L17,91.5625 M17,93.5625 L17,99.4725 C17,99.5225 17.04,99.5625 17.09,99.5625 L24.9,99.5625 C24.95,99.5625 24.99,99.5225 24.99,99.4725 L24.99,93.5625 L22.02,93.5625 L22.02,94.5925 L19.99,94.5925 L19.99,93.5625 L16.99,93.5625 " fill="#000000" style="stroke:;stroke-width:0.0;stroke-dasharray:;"></path><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="48" x="26" y="99.9258">[.vscode]</text><path d="M17,106.6563 L17,107.6563 L25,107.6563 L25,106.6563 L17,106.6563 M17,108.6563 L17,114.5663 C17,114.6163 17.04,114.6563 17.09,114.6563 L24.9,114.6563 C24.95,114.6563 24.99,114.6163 24.99,114.5663 L24.99,108.6563 L22.02,108.6563 L22.02,109.6863 L19.99,109.6863 L19.99,108.6563 L16.99,108.6563 " fill="#000000" style="stroke:;stroke-width:0.0;stroke-dasharray:;"></path><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="91" x="26" y="115.0195">[documentacion]</text><path d="M17,121.75 L17,122.75 L25,122.75 L25,121.75 L17,121.75 M17,123.75 L17,129.66 C17,129.71 17.04,129.75 17.09,129.75 L24.9,129.75 C24.95,129.75 24.99,129.71 24.99,129.66 L24.99,123.75 L22.02,123.75 L22.02,124.78 L19.99,124.78 L19.99,123.75 L16.99,123.75 " fill="#000000" style="stroke:;stroke-width:0.0;stroke-dasharray:;"></path><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="62" x="26" y="130.1133">[imagenes]</text><path d="M17,136.8438 L17,137.8438 L25,137.8438 L25,136.8438 L17,136.8438 M17,138.8438 L17,144.7538 C17,144.8038 17.04,144.8438 17.09,144.8438 L24.9,144.8438 C24.95,144.8438 24.99,144.8038 24.99,144.7538 L24.99,138.8438 L22.02,138.8438 L22.02,139.8738 L19.99,139.8738 L19.99,138.8438 L16.99,138.8438 " fill="#000000" style="stroke:;stroke-width:0.0;stroke-dasharray:;"></path><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="20" x="26" y="145.207">[u1]</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="56" x="16" y="160.3008">index.html</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="71" x="16" y="175.3945">README.md</text><text fill="#0000FF" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="81" x="16" y="190.4883">rsync_files.txt</text><rect fill="none" height="2" style="stroke:#888888;stroke-width:1.0;" width="2" x="9" y="48.7344"></rect><rect fill="none" height="2" style="stroke:#888888;stroke-width:1.0;" width="2" x="19" y="63.8281"></rect><line style="stroke:#888888;stroke-width:1.0;" x1="10" x2="10" y1="51.7344" y2="64.8281"></line><line style="stroke:#888888;stroke-width:1.0;" x1="10" x2="18" y1="64.8281" y2="64.8281"></line><line style="stroke:#888888;stroke-width:1.0;" x1="20" x2="20" y1="66.8281" y2="79.9219"></line><line style="stroke:#888888;stroke-width:1.0;" x1="20" x2="28" y1="79.9219" y2="79.9219"></line><!--SRC=[NP1PJm8n58NV-olkav4nJ031c8anA0mc296m-6AGT3eNQEoqf0kBXFzkGGR4ljpcV7SvENLZgRQ62ak031WL26N_snBmxpFbCswfuD-KSIK_3-9sU2Wty72LgFNZHyYqCaOgY-CZ288S-UcvIyP1y4l-e9NINrEXLkOC_KQcXD9H8Xm-1i729O8pgYShJ2QKMUyWt6GYxp_TNngcqjFnevegvZAKzc3y7-CPdQ54CuPBtPNpHYvJN8TpcucZq8-VcjqupD9yuiAfDXl99bCkq8HsROyETsH7wYZJGxYa9wYqesu7bgYDzmJbi5AgLCFRw-7SGGiJADUWKeggfQXKWqOyX3qkaEkNNWUCSfeXfDnOpHEtZw90sdH9eU-avHb6yBP0sMw-vWB4SicraliCIFkzUswugnQVkOK1Qky4thkaYLFgXFKJFaSkPn6CXgtYFUbGENC-gGZGa8RoU_KcWdZm0m00]--></g></svg></p></div>
+</div>
+<pre data-role="codeBlock" data-info="yaml" class="language-yaml yaml"><code><span class="token key atrule">name</span><span class="token punctuation">:</span> Publicar web en GitHub Pages
+<span class="token comment"># Al hacerse Push en master</span>
 <span class="token key atrule">on</span><span class="token punctuation">:</span>
 <span class="token key atrule">push</span><span class="token punctuation">:</span>
     <span class="token key atrule">branches</span><span class="token punctuation">:</span> <span class="token punctuation">[</span> main <span class="token punctuation">]</span>
 
-<span class="token comment"># Ejecuta este workflow secuencial (otro job se ejecutaría en paralelo)</span>
 <span class="token key atrule">jobs</span><span class="token punctuation">:</span>
-<span class="token comment"># Solo hay un trabajo llamado sincronizaA</span>
 <span class="token key atrule">publica</span><span class="token punctuation">:</span>
-    <span class="token comment"># Se ejecuta en una máquina de ubuntu</span>
     <span class="token key atrule">runs-on</span><span class="token punctuation">:</span> ubuntu<span class="token punctuation">-</span>latest
 
-    <span class="token comment"># Secuencia de pasos</span>
     <span class="token key atrule">steps</span><span class="token punctuation">:</span>
     <span class="token comment"># Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it</span>
     <span class="token punctuation">-</span> <span class="token key atrule">uses</span><span class="token punctuation">:</span> actions/checkout@v4
 
-    <span class="token comment"># Runs a set of commands using the runners shell</span>
-    <span class="token comment"># DEBO ELIMINAR CON rm AQUELLAS CARPETAS QUE NO QUIERO PUBLICAR !!!</span>
     <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Crea carpeta a publicar en www
+        <span class="token comment"># DEBO ELIMINAR CON rm AQUELLAS CARPETAS QUE NO QUIERO PUBLICAR !!!</span>
         <span class="token key atrule">run</span><span class="token punctuation">:</span> <span class="token punctuation">|</span><span class="token scalar string">
         rsync -av --prune-empty-dirs --include-from=rsync_files.txt ./ www/                 
-        rm -Rv www/ejemplos
         rm -Rv www/.crossnote</span>
 
     <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Despliego www en el repo donde tengo github pages
@@ -371,21 +463,111 @@ git checkout MI_RAMA
         <span class="token key atrule">publish_branch</span><span class="token punctuation">:</span> main
         <span class="token key atrule">publish_dir</span><span class="token punctuation">:</span> ./www
         <span class="token key atrule">allow_empty_commit</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
-</code></pre><p>Contenido de <strong><code>rsync_files.txt</code></strong> para que se publique solo lo necesario.</p>
-<pre data-role="codeBlock" data-info="txt" class="language-txt txt"><code> + */
- + *.html
- + *.pdf
- + *.png
- + *.jpeg
- + *.jpg
- + *_ejemplo.cs
- + *_caso_de_estudio.zip
- + *.svg
- - *
+</code></pre><p>Deberá reemplazar el valor de <strong><code>external_repository</code></strong> por el nombre de la organización y el nombre del repositorio público que hemos creado para publicar los materiales. En nuestros ejemplos sería <strong><code>balmisdigigs/digitalizacion.github.io</code></strong>.</p>
+<div style="page-break-after:always;"></div>
+<h3 id="decidiendo-que-archivos-publicar">Decidiendo que archivos publicar </h3>
+<p>Fíjate que el comando que se ejecuta en el paso <strong><code>Crea carpeta a publicar en www</code></strong> es el siguiente:</p>
+<pre data-role="codeBlock" data-info="yaml" class="language-yaml yaml"><code><span class="token key atrule">run</span><span class="token punctuation">:</span> <span class="token punctuation">|</span>
+rsync <span class="token punctuation">-</span>av <span class="token punctuation">-</span><span class="token punctuation">-</span>prune<span class="token punctuation">-</span>empty<span class="token punctuation">-</span>dirs <span class="token punctuation">-</span><span class="token punctuation">-</span>include<span class="token punctuation">-</span>from=rsync_files.txt ./ www/                 
+rm <span class="token punctuation">-</span>Rv www/.crossnote
+</code></pre><div class="row">
+<div class="col-sm-6">
+<p>En el sincronizamos en la carpeta de publicación <strong><code>www</code></strong> los archivos que queremos publicar en el <strong>repositorio público</strong>. Para ello, se usa el comando <strong><code>rsync</code></strong> que es un comando de sincronización de archivos y carpetas entre dos ubicaciones y solo copiamos aquellas extensiones que nos interesan definidas en el archivo <strong><code>rsync_files.txt</code></strong> que se encuentra en la raíz del repositorio.</p>
+</div>
+<div class="col-sm-6 my-auto">
+<pre data-role="codeBlock" data-info="txt" class="language-txt txt"><code>+ */
++ *.html
++ *.pdf
++ *.png
++ *.jpeg
++ *.jpg
++ *_ejemplo.zip
++ *_recurso.zip
++ *.svg
+- *
+</code></pre></div>
+</div>
+<p>Donde si lo abres, puedes ver como se muestra en el esquema anterior que solo se copian los archivos que tienen las extensiones que hemos definido y el resto se eliminan. Muy importante no poner extensiones tipo <strong><code>*.md</code></strong> o  <strong><code>*.zip</code></strong> que no forman parte de contenido o assets de una página web. Pues serán visibles por cualquiera al ser un repositorio público.</p>
+<div class="admonition danger">
+<p class="admonition-title">Peligro</p>
+<p>Además, fíjate que al final de la cadena hemos añadido un <strong><code>rm -Rv www/.crossnote</code></strong> indicamos que eliminamos la carpeta <strong><code>.crossnote</code></strong> ya que contiene un archivo <strong><code>*.html</code></strong> y por tanto es publicada. Si quisiéramos eliminar otras carpetas con archivos a publicar las tendríamos que añadir aquí. Por ejemplo, supongamos que tenemos una carpeta <strong><code>examenes</code></strong> y otra <strong><code>bibliografia</code></strong> con archivos <strong><code>*.pdf</code></strong> y no queremos que se publiquen, deberíamos añadir las líneas de borrado de las carpetas al final del comando <strong><code>rsync</code></strong> como sigue:</p>
+<pre data-role="codeBlock" data-info="cmd" class="language-cmd cmd"><code>run: |
+rsync -av --prune-empty-dirs --include-from=rsync_files.txt ./ www/                 
+rm -Rv www/.crossnote
+rm -Rv www/examenes
+rm -Rv www/bibliografia
+</code></pre></div>
+<div style="page-break-after:always;"></div>
+<h3 id="activando-github-pages">Activando GitHub Pages </h3>
+<p><img src="assets/imagenes/crear_repositorio/pages.png" alt="nombre" style="display:block;margin:0 auto;max-width:600px;"></p>
+<ul>
+<li>1️⃣ Para nuestro ejemplo, vamos al repositorio público de despliegue (<strong><code>digitalizacion.github.io</code></strong> en el ejemplo) que hemos creado para nuestros materiales en la organización <strong><code>balmisdigigs</code></strong>.</li>
+<li>2️⃣ Vamos a la pestaña de <strong><code>Settings</code></strong> del repositorio.</li>
+<li>3️⃣ En el menú de la izquierda, en la sección de <strong><code>Pages</code></strong> seleccionamos la rama <strong><code>main</code></strong> y la carpeta <strong><code>/(root)</code></strong> y pulsamos sobre el botón <strong><code>Save</code></strong>.</li>
+<li>4️⃣ Tras cada commit en la rama <strong><code>main</code></strong> de nuestro repositorio privado, se ejecutará la acción de despliegue y se publicará en el <strong><code>main</code></strong> repositorio público. Desencadenando a su vez la acción de <strong>GitHub Pages</strong> y publicando el contenido en la URL <strong><code>https://balmisdigigs.github.io/digitalizacion.github.io/</code></strong> como puedes ver en el recuadro. Donde además aparece un botón denominado <strong><code>Visit site</code></strong>. Apúntate esta URL como marcador para que no se te olvide.</li>
+</ul>
+<div style="page-break-after:always;"></div>
+<h2 id="workflow-de-trabajo">Workflow de Trabajo </h2>
+<h3 id="trabajo-normal-en-nuestra-rama">Trabajo normal en nuestra rama </h3>
+<p>En ocasiones queremos solo trabajar en nuestra rama y hacer un push a la misma para cambiar de equipo de trabajo o sincronizarnos con el resto de trabajo que hubiese en <strong><code>main</code></strong>. Para ello, podemos usar el siguiente workflow de trabajo:</p>
+<ol>
+<li>
+<p>Hacemos un <strong><code>commit</code></strong> en nuestra rama de trabajo (<strong><code>NUESTRA_RAMA</code></strong>).</p>
+<pre data-role="codeBlock" data-info="cmd" class="language-cmd cmd"><code>C:\materiales\digitalizacion&gt; git add .
+C:\materiales\digitalizacion&gt; git commit -m "Descripción del commit"
+</code></pre></li>
+<li>
+<p>Actualizamos main y lo fusionamos en nuestra rama de trabajo (<strong><code>NUESTRA_RAMA</code></strong>).</p>
+<pre data-role="codeBlock" data-info="cmd" class="language-cmd cmd"><code>C:\materiales\digitalizacion&gt; git checkout main
+C:\materiales\digitalizacion&gt; git pull
+C:\materiales\digitalizacion&gt; git checkout NUESTRA_RAMA
+C:\materiales\digitalizacion&gt; git merge main
+</code></pre></li>
+<li>
+<p>Hacemos un <strong><code>push</code></strong> a nuestra rama de trabajo (<strong><code>NUESTRA_RAMA</code></strong>) en GitHub.</p>
+<pre data-role="codeBlock" data-info="cmd" class="language-cmd cmd"><code>C:\materiales\digitalizacion&gt; git push
 </code></pre></li>
 </ol>
-</li>
+<h3 id="publicar-en-main-y-desplegar-en-github-pages">Publicar en <strong><code>main</code></strong> y desplegar en GitHub Pages </h3>
+<p>El proceso se puede puede realizar de muchas formas, pero se puede resumir en los siguientes pasos:</p>
+<ol>
+<li>
+<p>Hacemos un <strong><code>commit</code></strong> en nuestra rama de trabajo (<strong><code>NUESTRA_RAMA</code></strong>).</p>
+<pre data-role="codeBlock" data-info="cmd" class="language-cmd cmd"><code>C:\materiales\digitalizacion&gt; git add .
+C:\materiales\digitalizacion&gt; git commit -m "Descripción del commit"
+</code></pre></li>
+<li>
+<p>Vamos a la rama <strong><code>main</code></strong> y hacemos un <strong><code>pull</code></strong> para actualizarla con los cambios que se hayan podido realizar en el repositorio remoto. Posteriormente, hacemos un <strong><code>merge</code></strong> de nuestra rama de trabajo (<strong><code>NUESTRA_RAMA</code></strong>) en la rama <strong><code>main</code></strong> y lo subimos al repositorio remoto. Este último paso puede producirnos algún tipo de conflicto que deberemos resolver si alguien ha modificado el mismo archivo que nosotros. En ese caso, deberemos resolver el conflicto y hacer un nuevo <strong><code>commit</code></strong>.</p>
+<pre data-role="codeBlock" data-info="cmd" class="language-cmd cmd"><code>C:\materiales\digitalizacion&gt; git checkout main
+C:\materiales\digitalizacion&gt; git pull
+C:\materiales\digitalizacion&gt; git merge NUESTRA_RAMA
+C:\materiales\digitalizacion&gt; git push
+</code></pre></li>
+<li>
+<p>Volvemos a nuestra rama de trabajo (<strong><code>NUESTRA_RAMA</code></strong>) y hacemos un <strong><code>merge</code></strong> de la rama <strong><code>main</code></strong> en nuestra rama de trabajo y lo subimos al repositorio remoto.</p>
+<pre data-role="codeBlock" data-info="cmd" class="language-cmd cmd"><code>C:\materiales\digitalizacion&gt; git checkout NUESTRA_RAMA
+C:\materiales\digitalizacion&gt; git merge main
+C:\materiales\digitalizacion&gt; git push
+</code></pre></li>
 </ol>
+<p>Si prefieres puedes crear este worklfow de publicación en un fichero <strong><code>.cmd</code></strong> dentro de la carpeta .<strong><code>.vscode</code></strong> de tu workspace. En nuestro ejemplo lo hemos llamado <strong><code>despliegue.cmd</code></strong>. Para ejecutarlo puedes arrastrar el fichero a un terminal abierto en VSCode (<strong><code>Ctrl + ñ</code></strong>) que esté situado en la raíz del workspace. El contenido del fichero es el siguiente:</p>
+<div class="row">
+<div class="col-sm-7 my-auto">
+<pre data-role="codeBlock" data-info="cmd" class="language-cmd cmd"><code>rem Partimos de NUESTRA_RAMA con el commit realizado
+
+git checkout main
+git pull
+git merge NUESTRA_RAMA
+git push
+git checkout NUESTRA_RAMA
+git merge main
+git push
+
+rem Acabamos en nuestra rama si todo ha ido bien
+</code></pre></div>
+<div class="col-sm-5 my-auto">
+<p align="center" class="puml"><!--?xml version="1.0" encoding="us-ascii" standalone="no"?--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentstyletype="text/css" height="219.6px" preserveAspectRatio="none" style="width:177px;height:219px;background:#FFFFFF;" version="1.1" viewBox="0 0 177 219" width="177.6px" zoomAndPan="magnify"><defs></defs><g><rect fill="#EEEEEE" height="21.7125" style="stroke:#000000;stroke-width:1.2;" width="152.4" x="7.2" y="7.2"></rect><text fill="#000000" font-family="sans-serif" font-size="14.4" lengthAdjust="spacing" textLength="85.2" x="9.6" y="24.5484">digitalizacion</text><line style="stroke:#000000;stroke-width:1.2;" x1="146.4" x2="146.4" y1="7.2" y2="28.9125"></line><polygon fill="#000000" points="150,14.4,157.2,14.4,153.6,22.9125" style="stroke:#000000;stroke-width:1.2;"></polygon><path d="M20.4,37.425 L20.4,38.625 L30,38.625 L30,37.425 L20.4,37.425 M20.4,39.825 L20.4,46.917 C20.4,46.977 20.448,47.025 20.508,47.025 L29.88,47.025 C29.94,47.025 29.988,46.977 29.988,46.917 L29.988,39.825 L26.424,39.825 L26.424,41.061 L23.988,41.061 L23.988,39.825 L20.388,39.825 " fill="#000000" style="stroke:;stroke-width:0.0;stroke-dasharray:;"></path><text fill="#000000" font-family="sans-serif" font-size="14.4" lengthAdjust="spacing" textLength="76.8" x="31.2" y="47.4609">[.crossnote]</text><path d="M20.4,55.5375 L20.4,56.7375 L30,56.7375 L30,55.5375 L20.4,55.5375 M20.4,57.9375 L20.4,65.0295 C20.4,65.0895 20.448,65.1375 20.508,65.1375 L29.88,65.1375 C29.94,65.1375 29.988,65.0895 29.988,65.0295 L29.988,57.9375 L26.424,57.9375 L26.424,59.1735 L23.988,59.1735 L23.988,57.9375 L20.388,57.9375 " fill="#000000" style="stroke:;stroke-width:0.0;stroke-dasharray:;"></path><text fill="#000000" font-family="sans-serif" font-size="14.4" lengthAdjust="spacing" textLength="51.6" x="31.2" y="65.5734">[.github]</text><path d="M20.4,73.65 L20.4,74.85 L30,74.85 L30,73.65 L20.4,73.65 M20.4,76.05 L20.4,83.142 C20.4,83.202 20.448,83.25 20.508,83.25 L29.88,83.25 C29.94,83.25 29.988,83.202 29.988,83.142 L29.988,76.05 L26.424,76.05 L26.424,77.286 L23.988,77.286 L23.988,76.05 L20.388,76.05 " fill="#000000" style="stroke:;stroke-width:0.0;stroke-dasharray:;"></path><text fill="#000000" font-family="sans-serif" font-size="14.4" font-weight="bold" lengthAdjust="spacing" textLength="62.4" x="31.2" y="83.6859">[.vscode]</text><text fill="#0000FF" font-family="sans-serif" font-size="14.4" font-weight="bold" lengthAdjust="spacing" textLength="108" x="31.2" y="101.7984">despliegue.cmd</text><path d="M20.4,109.875 L20.4,111.075 L30,111.075 L30,109.875 L20.4,109.875 M20.4,112.275 L20.4,119.367 C20.4,119.427 20.448,119.475 20.508,119.475 L29.88,119.475 C29.94,119.475 29.988,119.427 29.988,119.367 L29.988,112.275 L26.424,112.275 L26.424,113.511 L23.988,113.511 L23.988,112.275 L20.388,112.275 " fill="#000000" style="stroke:;stroke-width:0.0;stroke-dasharray:;"></path><text fill="#000000" font-family="sans-serif" font-size="14.4" lengthAdjust="spacing" textLength="109.2" x="31.2" y="119.9109">[documentacion]</text><path d="M20.4,127.9875 L20.4,129.1875 L30,129.1875 L30,127.9875 L20.4,127.9875 M20.4,130.3875 L20.4,137.4795 C20.4,137.5395 20.448,137.5875 20.508,137.5875 L29.88,137.5875 C29.94,137.5875 29.988,137.5395 29.988,137.4795 L29.988,130.3875 L26.424,130.3875 L26.424,131.6235 L23.988,131.6235 L23.988,130.3875 L20.388,130.3875 " fill="#000000" style="stroke:;stroke-width:0.0;stroke-dasharray:;"></path><text fill="#000000" font-family="sans-serif" font-size="14.4" lengthAdjust="spacing" textLength="74.4" x="31.2" y="138.0234">[imagenes]</text><path d="M20.4,146.1 L20.4,147.3 L30,147.3 L30,146.1 L20.4,146.1 M20.4,148.5 L20.4,155.592 C20.4,155.652 20.448,155.7 20.508,155.7 L29.88,155.7 C29.94,155.7 29.988,155.652 29.988,155.592 L29.988,148.5 L26.424,148.5 L26.424,149.736 L23.988,149.736 L23.988,148.5 L20.388,148.5 " fill="#000000" style="stroke:;stroke-width:0.0;stroke-dasharray:;"></path><text fill="#000000" font-family="sans-serif" font-size="14.4" lengthAdjust="spacing" textLength="24" x="31.2" y="156.1359">[u1]</text><text fill="#000000" font-family="sans-serif" font-size="14.4" lengthAdjust="spacing" textLength="67.2" x="19.2" y="174.2484">index.html</text><text fill="#000000" font-family="sans-serif" font-size="14.4" lengthAdjust="spacing" textLength="85.2" x="19.2" y="192.3609">README.md</text><text fill="#000000" font-family="sans-serif" font-size="14.4" lengthAdjust="spacing" textLength="87.6" x="19.2" y="210.4734">rsync_files.txt</text><rect fill="none" height="2.4" style="stroke:#888888;stroke-width:1.2;" width="2.4" x="10.8" y="76.5938"></rect><line style="stroke:#888888;stroke-width:1.2;" x1="12" x2="12" y1="80.1938" y2="95.9063"></line><line style="stroke:#888888;stroke-width:1.2;" x1="12" x2="21.6" y1="95.9063" y2="95.9063"></line><!--SRC=[NP1RImCn48NVyolcIUfAbssj8eiKBzqAjOlIsukqaat6RI2RI2wbjVZVJTSkOlEIv9ivavDpPnqrpbBf290fenAX4tV3UKyWh1KNfN1KYY_AX5Qh6kvdzNO1jsU5tlRVOcQqjKexN9uKWdRjYuP6KSCtbccEooZwhGG1qrARj90U-r74qNvAWQN7c5MywMgcSiryXShLZavU51KjKQ5Tmd_kEqsZK1otyTfLyWWcsVqWp-AA7-_6xXHx_n0IRUoshgRVv9lSeU9rJkHLKkNc-HWsQ6pmS4WiwVRYozPixM681NIke9kalIHDhk0ncy6XV4vQJwzZiDeRXi25TKOKtWNzEHdH3OM9LqvKcCBB9whHuBa1aAcDC5eT_an6Y_oluRhNVX0EfcY24rZaP80Vr4iN525VeSeKvhDX-uQCgIfzI2O5jEHHXxbcbq8s_G40]--></g></svg></p></div>
+</div>
 
       </div>
       
