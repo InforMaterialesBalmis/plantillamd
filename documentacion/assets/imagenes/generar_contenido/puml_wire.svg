@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="182.96475mm"
+   height="110.55166mm"
+   viewBox="0 0 182.96475 110.55166"
+   version="1.1"
+   id="svg5"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs2" />
+  <g
+     id="layer1"
+     transform="translate(-31.036591,-22.38559)">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Lucida Console';-inkscape-font-specification:'Lucida Console';fill:#000000;stroke:#000000;stroke-width:0.264583"
+       x="31.168882"
+       y="26.869722"
+       id="text242"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Lucida Console';-inkscape-font-specification:'Lucida Console';fill:#000000;stroke:#000000;stroke-width:0.264583"
+         x="31.168882"
+         y="26.869722"
+         id="tspan260">@startsalt</tspan><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Lucida Console';-inkscape-font-specification:'Lucida Console';fill:#000000;stroke:#000000;stroke-width:0.264583"
+         x="31.168882"
+         y="33.925274"
+         id="tspan400"> </tspan><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Lucida Console';-inkscape-font-specification:'Lucida Console';fill:#000000;stroke:#000000;stroke-width:0.264583"
+         x="31.168882"
+         y="40.980824"
+         id="tspan402">Scale 1.5</tspan><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Lucida Console';-inkscape-font-specification:'Lucida Console';fill:#000000;stroke:#000000;stroke-width:0.264583"
+         x="31.168882"
+         y="48.036373"
+         id="tspan404"> </tspan><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Lucida Console';-inkscape-font-specification:'Lucida Console';fill:#000000;stroke:#000000;stroke-width:0.264583"
+         x="31.168882"
+         y="55.091923"
+         id="tspan406">{</tspan><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Lucida Console';-inkscape-font-specification:'Lucida Console';fill:#000000;stroke:#000000;stroke-width:0.264583"
+         x="31.168882"
+         y="62.147472"
+         id="tspan408">    ^WorkSpace^</tspan><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Lucida Console';-inkscape-font-specification:'Lucida Console';fill:#000000;stroke:#000000;stroke-width:0.264583"
+         x="31.168882"
+         y="69.203026"
+         id="tspan410">    {T</tspan><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Lucida Console';-inkscape-font-specification:'Lucida Console';fill:#000000;stroke:#000000;stroke-width:0.264583"
+         x="31.168882"
+         y="76.258575"
+         id="tspan412">    + &lt;&amp;box&gt;[carpeta]</tspan><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Lucida Console';-inkscape-font-specification:'Lucida Console';fill:#000000;stroke:#000000;stroke-width:0.264583"
+         x="31.168882"
+         y="83.314125"
+         id="tspan414">    ++ &lt;&amp;box&gt;[subcarpeta]</tspan><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Lucida Console';-inkscape-font-specification:'Lucida Console';fill:#000000;stroke:#000000;stroke-width:0.264583"
+         x="31.168882"
+         y="90.369675"
+         id="tspan416">    +++ archivo_normal.txt</tspan><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Lucida Console';-inkscape-font-specification:'Lucida Console';fill:#000000;stroke:#000000;stroke-width:0.264583"
+         x="31.168882"
+         y="97.425224"
+         id="tspan418">    +++ archivo_comentado.txt &lt;color:gray&gt;(comentario)</tspan><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Lucida Console';-inkscape-font-specification:'Lucida Console';fill:#000000;stroke:#000000;stroke-width:0.264583"
+         x="31.168882"
+         y="104.48077"
+         id="tspan420">    ++ **archivo_destacado.txt**</tspan><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Lucida Console';-inkscape-font-specification:'Lucida Console';fill:#000000;stroke:#000000;stroke-width:0.264583"
+         x="31.168882"
+         y="111.53632"
+         id="tspan422"> </tspan><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Lucida Console';-inkscape-font-specification:'Lucida Console';fill:#000000;stroke:#000000;stroke-width:0.264583"
+         x="31.168882"
+         y="118.59187"
+         id="tspan424">    }</tspan><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Lucida Console';-inkscape-font-specification:'Lucida Console';fill:#000000;stroke:#000000;stroke-width:0.264583"
+         x="31.168882"
+         y="125.64742"
+         id="tspan426">}</tspan><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Lucida Console';-inkscape-font-specification:'Lucida Console';fill:#000000;stroke:#000000;stroke-width:0.264583"
+         x="31.168882"
+         y="132.70297"
+         id="tspan428">@endsalt</tspan></text>
+  </g>
+</svg>

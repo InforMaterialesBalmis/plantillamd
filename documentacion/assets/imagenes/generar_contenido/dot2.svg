@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="145.86249mm"
+   height="57.320824mm"
+   viewBox="0 0 145.86249 57.320824"
+   version="1.1"
+   id="svg5"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs2" />
+  <g
+     id="layer1"
+     transform="translate(-28.574357,-104.66825)">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Lucida Console';-inkscape-font-specification:'Lucida Console';fill:#000000;stroke:#000000;stroke-width:0.264583"
+       x="28.70665"
+       y="109.25436"
+       id="text242-2"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Lucida Console';-inkscape-font-specification:'Lucida Console';fill:#000000;stroke:#000000;stroke-width:0.264583"
+         x="28.70665"
+         y="109.25436"
+         id="tspan260-9">```dot {align=&quot;center&quot;, style=&quot;zoom: 0.7;&quot;}</tspan><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Lucida Console';-inkscape-font-specification:'Lucida Console';fill:#000000;stroke:#000000;stroke-width:0.264583"
+         x="28.70665"
+         y="116.30991"
+         id="tspan648">digraph G {</tspan><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Lucida Console';-inkscape-font-specification:'Lucida Console';fill:#000000;stroke:#000000;stroke-width:0.264583"
+         x="28.70665"
+         y="123.36546"
+         id="tspan650">    rankdir = LR;</tspan><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Lucida Console';-inkscape-font-specification:'Lucida Console';fill:#000000;stroke:#000000;stroke-width:0.264583"
+         x="28.70665"
+         y="130.42101"
+         id="tspan652">    node [shape=box];</tspan><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Lucida Console';-inkscape-font-specification:'Lucida Console';fill:#000000;stroke:#000000;stroke-width:0.264583"
+         x="28.70665"
+         y="137.47656"
+         id="tspan654">    A -&gt; B;</tspan><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Lucida Console';-inkscape-font-specification:'Lucida Console';fill:#000000;stroke:#000000;stroke-width:0.264583"
+         x="28.70665"
+         y="144.5321"
+         id="tspan656">    B -&gt; C;</tspan><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Lucida Console';-inkscape-font-specification:'Lucida Console';fill:#000000;stroke:#000000;stroke-width:0.264583"
+         x="28.70665"
+         y="151.58766"
+         id="tspan658">    B -&gt; D;</tspan><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Lucida Console';-inkscape-font-specification:'Lucida Console';fill:#000000;stroke:#000000;stroke-width:0.264583"
+         x="28.70665"
+         y="158.6432"
+         id="tspan660">}</tspan><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Lucida Console';-inkscape-font-specification:'Lucida Console';fill:#000000;stroke:#000000;stroke-width:0.264583"
+         x="28.70665"
+         y="165.69876"
+         id="tspan662">```</tspan></text>
+  </g>
+</svg>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="86.650154mm"
+   height="53.563541mm"
+   viewBox="0 0 86.650153 53.563541"
+   version="1.1"
+   id="svg5"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs2" />
+  <text
+     xml:space="preserve"
+     style="font-size:3.52777px;font-family:'Lucida Console';-inkscape-font-specification:'Lucida Console';fill:#000000;stroke:#000000;stroke-width:0.264583"
+     x="0.1322919"
+     y="2.9159226"
+     id="text431"><tspan
+       id="tspan429"
+       style="stroke-width:0.264583"
+       x="0.1322919"
+       y="2.9159226">```mermaid {align=&quot;center&quot;}</tspan><tspan
+       style="stroke-width:0.264583"
+       x="0.1322919"
+       y="7.3256354"
+       id="tspan433">architecture-beta</tspan><tspan
+       style="stroke-width:0.264583"
+       x="0.1322919"
+       y="11.735348"
+       id="tspan435">    group api(cloud)[API]</tspan><tspan
+       style="stroke-width:0.264583"
+       x="0.1322919"
+       y="16.14506"
+       id="tspan437"></tspan><tspan
+       style="stroke-width:0.264583"
+       x="0.1322919"
+       y="20.554773"
+       id="tspan439">    service db(database)[Database] in api</tspan><tspan
+       style="stroke-width:0.264583"
+       x="0.1322919"
+       y="24.964485"
+       id="tspan441">    service disk1(disk)[Storage] in api</tspan><tspan
+       style="stroke-width:0.264583"
+       x="0.1322919"
+       y="29.374199"
+       id="tspan443">    service disk2(disk)[Storage] in api</tspan><tspan
+       style="stroke-width:0.264583"
+       x="0.1322919"
+       y="33.783909"
+       id="tspan445">    service server(server)[Server] in api</tspan><tspan
+       style="stroke-width:0.264583"
+       x="0.1322919"
+       y="38.193623"
+       id="tspan447"></tspan><tspan
+       style="stroke-width:0.264583"
+       x="0.1322919"
+       y="42.603333"
+       id="tspan449">    db:L -- R:server</tspan><tspan
+       style="stroke-width:0.264583"
+       x="0.1322919"
+       y="47.013046"
+       id="tspan451">    disk1:T -- B:server</tspan><tspan
+       style="stroke-width:0.264583"
+       x="0.1322919"
+       y="51.42276"
+       id="tspan453">    disk2:T -- B:db</tspan><tspan
+       style="stroke-width:0.264583"
+       x="0.1322919"
+       y="55.83247"
+       id="tspan455">```</tspan></text>
+</svg>

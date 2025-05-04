@@ -1,0 +1,81 @@
+digraph {
+    viewport = "275,150,0.3";
+    graph[
+        rankdir = LR
+        ranksep = 0.5,
+        fontname = "Arial"
+        bgcolor = "transparent"
+    ]
+
+    node[
+        fontname = "Arial",
+        fontsize = 15,
+        style = "filled, rounded",
+        color = steelblue4, fontcolor = white,
+        shape = box,
+        height = 1.25,
+        width = 1
+    ]
+
+    edge[
+        fontname = "Arial",
+        color = dodgerblue4,
+        penwidth = 2,
+        fontcolor = dodgerblue,
+        fontsize = 10         
+    ]
+
+    subgraph cluster_ejecucion_jvm {
+        label="EJECUCIÓN EN JAVA VM";
+        margin = 30     
+        fontsize = 20
+        labelloc = "t"
+        labeljust="r"
+        style = "solid, rounded"         
+        fontcolor=cornflowerblue
+        color =cornflowerblue
+        penwidth = 3
+
+        codigo_fuente_java [label="Código fuente\nJava", color = steelblue1, fontcolor = white];
+        codigo_fuente_scala [label="Código fuente\nScala", color = steelblue1, fontcolor = white];
+        bytecode_java [label="Bytecode\nJava (.class)"];
+
+        subgraph cluster_plataforma_x64W {        
+            label="PLATAFORMA CON WINDOWS";
+            margin = 20     
+            fontsize = 15
+            labelloc = "t"
+            labeljust="r"
+            style = "dashed, rounded"
+            fontcolor=lightblue3
+            color =lightblue3
+            penwidth = 2
+
+            jre_x64W [label="JRE para\nx64 + Windows"];
+            microprocesador_x64W [label="Microprocesador\nx64"];
+            jre_x64W -> microprocesador_x64W [label="Intérprete JIT", fontcolor="red2", color="red4"];
+        }
+
+        subgraph cluster_plataforma_armLin {        
+            label="PLATAFORMA CON LINUX";
+            margin = 20     
+            fontsize = 15
+            labelloc = "t"
+            labeljust="r"
+            style = "dashed, rounded"
+            fontcolor=lightblue3
+            color =lightblue3
+            penwidth = 2
+
+            jre_armLin [label="JRE para\nARM + Linux"];
+            microprocesador_armLin [label="Microprocesador\nARM"];
+            jre_armLin -> microprocesador_armLin [label="Intérprete JIT", fontcolor="red2", color="red4"];
+        }
+
+        codigo_fuente_java -> bytecode_java [label="Compilación"];      
+        codigo_fuente_scala -> bytecode_java [label="Compilación"];      
+
+        bytecode_java -> jre_x64W [label="Ejecución\nCarga (Classloader)", fontcolor="red2", color="red4"];
+        bytecode_java -> jre_armLin [label="Ejecución\nCarga (Classloader)", fontcolor="red2", color="red4"];
+    }
+}

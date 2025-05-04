@@ -1,0 +1,56 @@
+@startuml
+skinparam classAttributeIconSize 0
+skinparam ArrowColor Black
+skinparam ActivityBackgroundColor WhiteSmoke
+skinparam ActivityDiamondBackgroundColor WhiteSmoke
+skinparam ActivityBorderColor Black
+skinparam ActivityDiamondBorderColor Black
+skinparam ClassBackgroundColor Snowstart
+skinparam ActivityFontSize 16
+skinparam ActivityDiamondFontSize 16
+skinparam ActivityDiamondFontStyle bold
+skinparam NoteBackgroundColor Snow
+skinparam NoteBorderColor Gray
+skinparam BackgroundColor Transparent
+
+Scale 0.6
+
+partition "Evaluación Continua" {
+    split
+        #AliceBlue:Primera\nEvaluación **33%**;
+    split again
+        #AliceBlue:Segunda\nEvaluación **33%**;
+    split again 
+        #AliceBlue:Tercera\nEvaluación **34%**;
+        floating note right
+            **70%** Exámenes
+            **10%** Cuestionarios
+            **20%** Actividades
+            Para cada evaluación
+        end note
+    end split
+}
+if (nota >= 5     y\nSupera RAs LFP) then (si)
+     #technology:Aprueba;
+    stop
+else (no)
+     #LightCyan:Final **Ordinario**;
+    note right
+        Incluye **TODA**
+        la materia
+    end note
+    if (nota >= 5) then (si)
+         #technology:Aprueba;
+        stop
+    else (no)
+         #LightBlue:Final **Extraordinario**;
+        if (nota >= 5) then (si)
+            #technology:Aprueba;
+            stop
+        else (no)
+        endif
+    endif
+endif
+-[#green]->
+#mistyrose:Suspende;
+@enduml

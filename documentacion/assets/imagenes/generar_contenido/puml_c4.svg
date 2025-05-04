@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="325.5365mm"
+   height="156.09854mm"
+   viewBox="0 0 325.5365 156.09854"
+   version="1.1"
+   id="svg5"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs2" />
+  <g
+     id="layer1"
+     transform="translate(-31.036591,-29.339165)">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Lucida Console';-inkscape-font-specification:'Lucida Console';fill:#000000;stroke:#000000;stroke-width:0.264583"
+       x="31.168882"
+       y="26.869722"
+       id="text242"><tspan
+         id="tspan353"
+         x="31.168882"
+         y="26.869722" /><tspan
+         id="tspan355"
+         x="31.168882"
+         y="33.925274">```puml {align=&quot;center&quot;, korki=true}</tspan><tspan
+         x="31.168882"
+         y="40.980824"
+         id="tspan365">@startuml</tspan><tspan
+         x="31.168882"
+         y="48.036373"
+         id="tspan367">!include  https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml</tspan><tspan
+         x="31.168882"
+         y="55.091923"
+         id="tspan369">!include &lt;tupadr3/devicons2/tomcat_line_wordmark&gt;</tspan><tspan
+         x="31.168882"
+         y="62.147472"
+         id="tspan371">!include &lt;tupadr3/devicons2/mysql_wordmark&gt;</tspan><tspan
+         x="31.168882"
+         y="69.203026"
+         id="tspan373">!include &lt;tupadr3/devicons2/android_wordmark&gt;</tspan><tspan
+         x="31.168882"
+         y="76.258575"
+         id="tspan375"> </tspan><tspan
+         x="31.168882"
+         y="83.314125"
+         id="tspan377" /><tspan
+         x="31.168882"
+         y="90.369675"
+         id="tspan379">skinparam backgroundColor Transparent</tspan><tspan
+         x="31.168882"
+         y="97.425224"
+         id="tspan381">Scale 1.0</tspan><tspan
+         x="31.168882"
+         y="104.48077"
+         id="tspan383"> </tspan><tspan
+         x="31.168882"
+         y="111.53632"
+         id="tspan385">HIDE_STEREOTYPE()</tspan><tspan
+         x="31.168882"
+         y="118.59187"
+         id="tspan387">LAYOUT_LEFT_RIGHT()</tspan><tspan
+         x="31.168882"
+         y="125.64742"
+         id="tspan389"> </tspan><tspan
+         x="31.168882"
+         y="132.70297"
+         id="tspan391">System(android, &quot;Aplicación&quot;, &quot;Retrofit 2&quot;, $sprite=&quot;android_wordmark&quot;)</tspan><tspan
+         x="31.168882"
+         y="139.75853"
+         id="tspan393">Container_Boundary(azure, &quot;Azure&quot;) {</tspan><tspan
+         x="31.168882"
+         y="146.81407"
+         id="tspan395">    System(api, &quot;Endpoint\nAPI Rest&quot;,&quot;Jakarta EE&quot;, $sprite=&quot;tomcat_line_wordmark&quot;)</tspan><tspan
+         x="31.168882"
+         y="153.86963"
+         id="tspan397">    SystemDb(db, &quot;BD&quot;, &quot;MySQL&quot;, $sprite=&quot;mysql&quot;)</tspan><tspan
+         x="31.168882"
+         y="160.92517"
+         id="tspan399">}</tspan><tspan
+         x="31.168882"
+         y="167.98073"
+         id="tspan401">Rel(android, api, &quot;API Rest&quot;, &quot;HTTP&quot;)</tspan><tspan
+         x="31.168882"
+         y="175.03627"
+         id="tspan403">Rel(api, db, &quot;Eclipselink&quot;, &quot;JDBC&quot;)</tspan><tspan
+         x="31.168882"
+         y="182.09183"
+         id="tspan405">@enduml</tspan><tspan
+         x="31.168882"
+         y="189.14738"
+         id="tspan407">```</tspan></text>
+  </g>
+</svg>

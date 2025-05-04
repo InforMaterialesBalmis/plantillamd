@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="104.40284mm"
+   height="64.376389mm"
+   viewBox="0 0 104.40284 64.376389"
+   version="1.1"
+   id="svg5"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs2" />
+  <g
+     id="layer1"
+     transform="translate(-29.29089,-175.24606)">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Lucida Console';-inkscape-font-specification:'Lucida Console';fill:#000000;stroke:#000000;stroke-width:0.264583"
+       x="29.423182"
+       y="179.83217"
+       id="text242-6"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Lucida Console';-inkscape-font-specification:'Lucida Console';fill:#000000;stroke:#000000;stroke-width:0.264583"
+         x="29.423182"
+         y="179.83217"
+         id="tspan260-2">```dot</tspan><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Lucida Console';-inkscape-font-specification:'Lucida Console';fill:#000000;stroke:#000000;stroke-width:0.264583"
+         x="29.423182"
+         y="186.88773"
+         id="tspan790">digraph G {</tspan><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Lucida Console';-inkscape-font-specification:'Lucida Console';fill:#000000;stroke:#000000;stroke-width:0.264583"
+         x="29.423182"
+         y="193.94327"
+         id="tspan792">    viewport = &quot;200,100,0.7,B&quot;;</tspan><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Lucida Console';-inkscape-font-specification:'Lucida Console';fill:#000000;stroke:#000000;stroke-width:0.264583"
+         x="29.423182"
+         y="200.99883"
+         id="tspan794">    rankdir = LR;</tspan><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Lucida Console';-inkscape-font-specification:'Lucida Console';fill:#000000;stroke:#000000;stroke-width:0.264583"
+         x="29.423182"
+         y="208.05437"
+         id="tspan796">    node [shape=box];</tspan><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Lucida Console';-inkscape-font-specification:'Lucida Console';fill:#000000;stroke:#000000;stroke-width:0.264583"
+         x="29.423182"
+         y="215.10992"
+         id="tspan798">    A -&gt; B;</tspan><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Lucida Console';-inkscape-font-specification:'Lucida Console';fill:#000000;stroke:#000000;stroke-width:0.264583"
+         x="29.423182"
+         y="222.16547"
+         id="tspan800">    B -&gt; C;</tspan><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Lucida Console';-inkscape-font-specification:'Lucida Console';fill:#000000;stroke:#000000;stroke-width:0.264583"
+         x="29.423182"
+         y="229.22102"
+         id="tspan802">    B -&gt; D;</tspan><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Lucida Console';-inkscape-font-specification:'Lucida Console';fill:#000000;stroke:#000000;stroke-width:0.264583"
+         x="29.423182"
+         y="236.27657"
+         id="tspan804">}</tspan><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Lucida Console';-inkscape-font-specification:'Lucida Console';fill:#000000;stroke:#000000;stroke-width:0.264583"
+         x="29.423182"
+         y="243.33212"
+         id="tspan806">```</tspan></text>
+  </g>
+</svg>

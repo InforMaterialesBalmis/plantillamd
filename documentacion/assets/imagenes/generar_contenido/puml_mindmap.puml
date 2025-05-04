@@ -1,0 +1,80 @@
+@startmindmap
+
+<style>
+mindmapDiagram {
+    :depth(0) {
+        HorizontalAlignment center
+        LineColor Azure
+        BackgroundColor SteelBlue
+        FontColor Azure
+        FontSize 14
+        FontStyle bold
+        Shadowing 3
+    }
+    :depth(1) {
+        Padding 12
+        Margin 3
+        LineColor SkyBlue
+        LineThickness 2.0
+        BackgroundColor Azure
+        FontColor SteelBlue
+        MaximumWidth 355
+        MinimumWidth 355
+        FontSize 10
+    }
+    :depth(2) {
+        HorizontalAlignment center
+        Margin 2
+        LineColor SkyBlue
+        BackgroundColor Trasparent
+        FontColor SteelBlue
+        FontSize 9
+    }
+    boxless {
+        FontColor SteelBlue
+        FontSize 9
+    }
+    arrow {
+        LineStyle 3
+        LineThickness 1.5
+        LineColor SteelBlue
+    }
+}
+</style>
+
+skinparam backgroundColor Transparent
+Scale 0.6
+
+* Ejemplo nodo\nraiz
+
+** Nodo segundo nivel simple
+
+*** Nodo tercer nivel simple
+
+**_ Nodo segundo nivel\nsimple sin caja o boxless\nvan mas unidos
+
+**:==Nodo segundo nivel con lista
+* Primer item
+* Sgundo item
+* Último item acaba en punto y coma;
+
+***_ Nodo tercer nivel simple sin caja o boxless
+
+left direction
+
+** Nodo segundo nivel simple
+
+**:<b>Nodo con HTML</b>
+<code>
+Fuente proporcional
+    respetando sangria
+    especial para código.
+</code>;
+
+
+***:Nodo 
+con saltos
+de línea
+sin LF simple;
+
+@endmindmap
