@@ -6,6 +6,19 @@
 
 .markdown-preview.markdown-preview {
 
+    @page a4landscape {
+        size: A4 landscape;
+        margin: 1cm;
+    }
+
+    @page a4portrait {
+        size: A4 portrait;
+        margin: 1cm 1cm 2.5cm 1cm;
+    }
+
+    .landscape { page: a4landscape }
+    .portrait  { page: a4portrait }
+
     .box_bg_lightgray {
         background-color: rgb(245, 245, 245);
         border: 2px solid rgb(150, 150, 150);

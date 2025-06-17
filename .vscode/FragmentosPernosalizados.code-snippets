@@ -20,6 +20,7 @@
 			"puppeteer:",
 			"\tscale: 0.9",
 			"\tlandscape: false",
+			"\tpreferCSSPageSize: true # Use CSS @page size if available",
 			"\tformat: \"A4\"",
 			"\tprintBackground: true",
 			"\tmargin:",
@@ -78,6 +79,14 @@
 		"prefix": "mde_saltoPagina",
 		"body": [
 			"<div style=\"page-break-after:always;\"></div>"
+		],
+		"description": "markdown, md"
+	},
+    "Salto de página en pdf y landscape": {
+		"scope": "markdown, md",
+		"prefix": "mde_saltoPaginaLandscape",
+		"body": [
+			"<div class=\"landscape\" style=\"page-break-after:always;\"></div>"
 		],
 		"description": "markdown, md"
 	},

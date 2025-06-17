@@ -1169,6 +1169,43 @@ Además hemos quitado el **`my-auto`** para que ajuste los párrafos a la parte 
 
 No vamos a entrar en más detalles de Bootstrap 5, ya que puedes ver la documentación en su **[página oficial](https://getbootstrap.com/docs/5.0/getting-started/introduction/)**. Además, no uns buena idea usarlo ya que está fuera del estándar de Markdown.
 
+## Generar PDF
+
+Si estamos viendo la vista 
+
+```yaml
+---
+...
+export_on_save:
+    puppeteer: true
+    html: true
+puppeteer:
+    scale: 1
+    landscape: false
+    preferCSSPageSize: true # Use CSS @page size if available
+    format: "A4"
+    printBackground: true
+    margin:
+        top: "1cm"
+        right: "1cm"
+        bottom: "2.5cm"
+        left: "1cm"
+    displayHeaderFooter: true
+    headerTemplate: "&nbsp;"
+    footerTemplate: "
+        <span style=\"font-size: 9pt; display: flex;\">
+            <span class=\"pageNumber\" style=\"margin-left: 1cm;\"></span>
+            /
+            <span class=\"totalPages\"></span>
+            <span class=\"title\" style=\"margin-left: 1cm;\"></span>
+            <span style=\"margin-left: 1cm;\">Departamento de Informática IES Doctor Balmis</span>
+        </span>
+...
+---
+```
+
+![alt text](assets/imagenes/generar_contenido/exportar_pdf.png)
+
 ## Conclusiones
 
 ### Vantajas :+1:
