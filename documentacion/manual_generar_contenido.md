@@ -1169,9 +1169,13 @@ Además hemos quitado el **`my-auto`** para que ajuste los párrafos a la parte 
 
 No vamos a entrar en más detalles de Bootstrap 5, ya que puedes ver la documentación en su **[página oficial](https://getbootstrap.com/docs/5.0/getting-started/introduction/)**. Además, no uns buena idea usarlo ya que está fuera del estándar de Markdown.
 
+<div style="page-break-after:always;"></div>
+
 ## Generar PDF
 
-Si estamos viendo la vista 
+Para generar el PDF, usaremos la librería **[Puppeteer](https://pptr.dev/)** que es una librería de Node.js que proporciona una API de alto nivel para controlar Chrome o Chromium a través del protocolo DevTools. Permite generar PDFs a partir de páginas web, entre otras cosas. **Solo deberemos tener instalado Google Chrome o Chromium en el sistema para poder usarla**.
+
+Con el plugin de *Markdown Preview Enhanced*, si estamos viendo la vista, modificamos el markdown y lo guardamos, se generará un PDF automáticamente. Para ello, en el frontmatter en YAML, deberemos tener configurada la propiedad **`export_on_save`** y configurado el atributo **`puppeteer`** a `true`. Además, a través de la propiedad **`puppeteer`**, podemos **[configurar](https://github.com/puppeteer/puppeteer/blob/v1.9.0/docs/api.md#pagepdfoptions)** el tamaño del PDF, márgenes, orientación, etc. Como se muestra en la configuración del frontmatter del siguiente ejemplo:
 
 ```yaml
 ---
@@ -1204,7 +1208,58 @@ puppeteer:
 ---
 ```
 
+Fíjate que hemos añadido **`printBackground`** a `true` para que se impriman los fondos de los elementos, ya que por defecto está a `false`. Además, hemos añadido **`preferCSSPageSize`** para poder configurar configuraciones de página específicas en el CSS distintas a las comunes definidas en el frontmatter.
+
+<div class="row">
+<div class="col-sm-8 my-auto">
+
+También podemos generar el PDF desde la vista previa del markdown, para ello, simplemente botón derecho para obtener el menú contextual y seleccionar la opción :one: **`Export >`** porteriormente la opción :two: **`Chrome (Puppeteer)`** y por último la opción :three: **`PDF`**. Esto generará el PDF en la carpeta **`pdf`** del proyecto. Esto además de generar el PDF, nos los previsulizará.
+
+</div>
+<div class="col-sm-4 my-auto">
+
 ![alt text](assets/imagenes/generar_contenido/exportar_pdf.png)
+
+</div>
+</div>
+
+Cómo lo que hace es imprimir el HTML generado por el parser de Markdown Preview Enhanced, a través de Puppeteer. Muchas veces no controlamos los saltos de página y puede que el PDF no quede como esperamos.
+
+### Añadir saltos de página al PDF
+
+Para añadir saltos de página al PDF, podemos usar la etiqueta HTML:
+
+```html
+<div style="page-break-after:always;"></div>
+```
+
+Una forma sencilla de hacerlo es escribir **`mde_`** seguido de **`Ctrl + Space`** y seleccionar el snippet **`mde_saltoPagina`**. Esto nos insertará el siguiente código anterior.
+
+Otro snippet que puede ser útil es **`mde_saltoPaginaLandscape`** que nos insertará el siguiente código:
+
+```html
+<div class="landscape" style="page-break-after:always;"></div>
+```
+
+que nos permitirá intercalar páginas en horizontal en el PDF. Para mostrar tablas grandes o imágenes grandes. Para ellos, deberemos seguir el siguiente esquema.
+
+```html {highlight=[7-11]}
+
+<p>Página 1 en vertical</p>
+
+<div style="page-break-after:always;"></div>
+
+<p>Página 2 en vertical</p>
+
+<div class="landscape" style="page-break-after:always;">
+
+<p>Página 3 en HORIZONTAL</p>
+
+</div>
+
+<p>Página 4 en vertical</p>
+
+```
 
 ## Conclusiones
 
