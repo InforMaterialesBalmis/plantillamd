@@ -86,7 +86,11 @@
 		"scope": "markdown, md",
 		"prefix": "mde_saltoPaginaLandscape",
 		"body": [
-			"<div class=\"landscape\" style=\"page-break-after:always;\"></div>"
+			"<div class=\"landscape\" style=\"page-break-after:always;\">",
+            " ",
+            "Aquí el markdown que va en landscape",
+            " ",
+            "</div>"
 		],
 		"description": "markdown, md"
 	},
@@ -481,5 +485,15 @@
 			":x: :-1:"
 		],
 		"description": "Icono_mala_práctica"
+	},
+    "Salida_consola": {
+		"scope": "markdown, md",
+		"prefix": "mde_salida_consola",
+		"body": [
+			"<pre class=\"salida_consola\">",
+			"Salida de la consola",
+			"</pre> <!-- fin salida consola -->"
+		],
+		"description": "Para mostrar salidas de consola oscuras"
 	}
 }

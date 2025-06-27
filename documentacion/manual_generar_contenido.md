@@ -653,6 +653,30 @@ function hola() {
 </div>
 </div>
 
+En ocasiones nos puede interesar simular la salida por consola con un tema negro de fondo. Como no podemos aplicar un tema especifico a un bloque de código se ha creado una clase que se aplicará a una etiqueta **`<pre class="salida_consola>`** dispones de code snippet **`mde_salida_consola`** para insertarla.
+
+<div class="row">
+<div class="col-sm-6 my-auto">
+
+```html
+<pre class="salida_consola">
+C:> dir *.*
+</pre> <!-- fin salida consola -->
+```
+
+</div>
+<div class="col-sm-6 my-auto">
+
+<pre class="salida_consola">
+C:> dir *.*
+</pre> <!-- fin salida consola -->
+
+</div>
+</div>
+
+
+
+
 <div style="page-break-after:always;"></div>
 
 ## Admonitions
